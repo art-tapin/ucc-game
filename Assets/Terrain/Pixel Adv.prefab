@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4397077540896816178}
   - component: {fileID: 3289961917927147700}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: Pixel Adv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2425,7 +2425,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &8063566233677176770
+--- !u!114 &3361774910009475916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
