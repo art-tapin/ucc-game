@@ -13,7 +13,7 @@ public class levelLoader : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            LoadNextLevel();
+            // LoadNextLevel();
         }
     }
 
