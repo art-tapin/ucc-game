@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
- private Rigidbody2D rb;
+    private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
@@ -31,28 +31,41 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        
+        
+            dirX = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            //jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        UpdateAnimationState();
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                //jumpSoundEffect.Play();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+            UpdateAnimationState();
+        
+
+
+        
     }
 
     private void UpdateAnimationState()
     {
         MovementState state;
 
-        if (dirX > 0f)
+        if (DialogueManager.isActive == true)
+        {
+            state = MovementState.idle;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        }
+        
+
+        if (dirX > 0f && DialogueManager.isActive == false)
         {
             state = MovementState.running;
             sprite.flipX = false;
         }
-        else if (dirX < 0f)
+        else if (dirX < 0f && DialogueManager.isActive == false)
         {
             state = MovementState.running;
             sprite.flipX = true;

@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     private Queue<string> sentences;
+    public static bool isActive = false;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,8 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
-
+        //GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+        isActive = true;
         animator.SetBool("IsOpen", true);
         Debug.Log("here");
         nameText.text = dialogue.name;
@@ -31,7 +33,6 @@ public class DialogueManager : MonoBehaviour
 
         }
         DisplayNextSentence();
-
     }
         
     public void DisplayNextSentence()
@@ -56,15 +57,14 @@ public class DialogueManager : MonoBehaviour
             System.Threading.Thread.Sleep(10);
             yield return null;
         }
-
-
     }
-
 
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
         Debug.Log("ended convo");
-    }
-    
+        isActive = false;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+        
+    }    
 } 
