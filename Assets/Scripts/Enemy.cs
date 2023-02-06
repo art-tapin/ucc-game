@@ -40,14 +40,15 @@ public class Enemy : MonoBehaviour
             movingRight = true;
             movingLeft = false;
             sprite.flipX = false;
-            yield return new WaitForSeconds(1.0f);
+            
+            
         }
         if (transform.position.x < oldPosition)
         {
             movingRight = false;
             movingLeft = true;
             sprite.flipX = true;
-            yield return new WaitForSeconds(1.0f);
+            
         }
 
     }
