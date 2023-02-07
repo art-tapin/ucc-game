@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject interactIcon;
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
@@ -19,9 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioSource jumpSoundEffect;
 
+    private Vector2 boxSize = new Vector2(0.1f, 1f);
+
     // Start is called before the first frame update
     private void Start()
     {
+        //interactIcon.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -31,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+            if (Input.GetKeyDown(KeyCode.E)) {
+                CheckInteraction();
+            }
         
             dirX = Input.GetAxisRaw("Horizontal");
 
@@ -43,10 +49,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
             UpdateAnimationState();
-        
-
-
-        
+                
     }
 
     private void UpdateAnimationState()
@@ -91,4 +94,39 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
+
+    public void OpenInteractableIcon() {
+        interactIcon.SetActive(true);
+    }
+
+    public void CloseInteractableIcon() {
+        interactIcon.SetActive(false);
+    }
+
+    private void CheckInteraction() {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+        if (hits.Length > 0) {
+            foreach(RaycastHit2D rc in hits) {
+                /*
+                if (rc.transform.GetComponent<Interactable>()) {
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+                */
+
+
+
+                
+                if (rc.IsInteractable()) {
+                    rc.Interact();
+                    // if more than one object in range remove this return
+                    return;
+                }
+                
+            }
+        }
+    }
+
+
 }
