@@ -5,23 +5,32 @@ using UnityEngine;
 public class WaypointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
-    private int currentWapointIndex = 0;
+    private int currentWaypointIndex = 0;
 
     [SerializeField] private float speed = 1f;
+
+    private void Start()
+    {
+        //GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = false;
+    }
 
     
     private void Update()
     {
         
-        if (Vector2.Distance(waypoints[currentWapointIndex].transform.position, transform.position) < 0.1f)
+        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < 0.1f)
         {
-            currentWapointIndex++;
-            if (currentWapointIndex >= waypoints.Length)
+            currentWaypointIndex++;
+            if (currentWaypointIndex >= waypoints.Length)
             {
-                currentWapointIndex = 0;
+                Debug.Log("1");
+                currentWaypointIndex = 0;
+                GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = false;
             }
+            GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = false;
+            //Debug.Log("2");
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWapointIndex].transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
 
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -7,8 +9,8 @@ public class Openable : Interactable
     public Sprite open;
     public Sprite closed;
 
-    private SpriteRenderer sr;
-    private bool isOpen;
+    public SpriteRenderer sr;
+    private bool isOpen = false;
 
     //sprite = GetComponent<SpriteRenderer>();
 
@@ -17,10 +19,12 @@ public class Openable : Interactable
         if (isOpen)
         {
             sr.sprite = closed;
+            Debug.Log("Closed");
         }
         else
         {
             sr.sprite = open;
+            Debug.Log("Open");
         }
 
         isOpen = !isOpen;
@@ -28,8 +32,8 @@ public class Openable : Interactable
 
     private void start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = closed;
-        ;
+        //isOpen = false;
     }
 }
