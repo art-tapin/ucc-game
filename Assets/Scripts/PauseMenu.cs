@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("escape key pressed");
             if (GameIsPaused)
             {
                 Resume();
@@ -25,14 +26,15 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume()
-    {
+    {   Debug.Log("resume");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
+        Debug.Log("pause");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -42,7 +44,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Loading Menu...");
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Scenes/1_MainMenu");
     }
 
     public void QuitGame()
