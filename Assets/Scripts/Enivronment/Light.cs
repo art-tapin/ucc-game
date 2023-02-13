@@ -8,6 +8,8 @@ public class Light : Interactable
     public Sprite off;
 
     public SpriteRenderer sprite;
+    public Light light1;
+    public Light light2;
     private bool isOff;
 
     public override void Interact()
@@ -16,7 +18,8 @@ public class Light : Interactable
         {
             sprite.sprite = off;
             Debug.Log("OFF");
-            //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Lamp_1").GetComponent<Light>().enabled = false;
+            GameObject.Find("Lamp_2").GetComponent<Light>().enabled = false;
             // TODO - Add scene change to Hallway
             // TODO - Add sound effect
         }
@@ -24,6 +27,8 @@ public class Light : Interactable
         {
             sprite.sprite = on;
             Debug.Log("ON");
+            GameObject.Find("Lamp_1").GetComponent<Light>().enabled = true;
+            GameObject.Find("Lamp_2").GetComponent<Light>().enabled = true;
             //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
         }
         isOff = !isOff;
