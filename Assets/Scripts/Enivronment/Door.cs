@@ -32,7 +32,7 @@ public class Door : Interactable
         isClosed = !isClosed;
     }
 
-    private void start()
+    private void Start()
     {
         sprite = gameObject.GetComponent<SpriteRenderer>();
         sprite.sprite = closed;

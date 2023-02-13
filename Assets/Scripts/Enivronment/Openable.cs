@@ -30,7 +30,7 @@ public class Openable : Interactable
         isOpen = !isOpen;
     }
 
-    private void start()
+    private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = closed;

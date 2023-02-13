@@ -32,7 +32,7 @@ public class Elevator : Interactable
         isUp = !isUp;
     }
 
-    private void start()
+    private void Start()
     {
         sprite = gameObject.GetComponent<SpriteRenderer>();
         sprite.sprite = down;
