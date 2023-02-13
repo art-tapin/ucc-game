@@ -23,11 +23,11 @@ public class WaypointFollower : MonoBehaviour
             currentWaypointIndex++;
             if (currentWaypointIndex >= waypoints.Length)
             {
-                Debug.Log("1");
+                //Debug.Log("1");
                 currentWaypointIndex = 0;
-                GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = false;
+                //GameObject.Find("Platform").GetComponent<WaypointFollower>().enabled = false;
             }
-            GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = false;
+            //GameObject.Find("Platform").GetComponent<WaypointFollower>().enabled = false;
             //Debug.Log("2");
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
