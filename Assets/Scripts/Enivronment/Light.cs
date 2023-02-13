@@ -4,41 +4,43 @@ using UnityEngine;
 
 public class Light : Interactable
 {
-    public Sprite on;
-    public Sprite off;
-
-    public SpriteRenderer sprite;
-    public Light light1;
-    public Light light2;
+    // public Sprite on;
+    // public Sprite off;
+    //
+    // public SpriteRenderer sprite;
+    public GameObject[] lights;
     private bool isOff;
 
     public override void Interact()
     {
         if (isOff)
         {
-            sprite.sprite = off;
+            // sprite.sprite = off;
             Debug.Log("OFF");
-            GameObject.Find("Lamp_1").GetComponent<Light>().enabled = false;
-            GameObject.Find("Lamp_2").GetComponent<Light>().enabled = false;
+            lights[0].GetComponent<UnityEngine.Light>().enabled = false;
+            lights[1].GetComponent<UnityEngine.Light>().enabled = false;
             // TODO - Add scene change to Hallway
             // TODO - Add sound effect
         }
         else
         {
-            sprite.sprite = on;
+            // sprite.sprite = on;
             Debug.Log("ON");
-            GameObject.Find("Lamp_1").GetComponent<Light>().enabled = true;
-            GameObject.Find("Lamp_2").GetComponent<Light>().enabled = true;
+            lights[0].GetComponent<UnityEngine.Light>().enabled = true;
+            lights[1].GetComponent<UnityEngine.Light>().enabled = true;
             //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
         }
         isOff = !isOff;
     }
 
-    private void start()
+    private void Start()
     {
-        sprite = gameObject.GetComponent<SpriteRenderer>();
-        sprite.sprite = off;
-        isOff = false;
+        lights = GameObject.FindGameObjectsWithTag("Light");
+        // lights[0].GetComponent<UnityEngine.Light>()
+        Debug.Log(lights[0].name + lights[1].name);
+        // sprite = gameObject.GetComponent<SpriteRenderer>();
+        // sprite.sprite = off;
+        isOff = true;
         //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
     }
 }

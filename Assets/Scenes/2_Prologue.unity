@@ -990,9 +990,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0b15f1ffd3f384fafaf22c7804ced7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: {fileID: 21300000, guid: cc63bd7f1113ae141a9884a0d64a279d, type: 3}
-  off: {fileID: 21300000, guid: cc63bd7f1113ae141a9884a0d64a279d, type: 3}
-  sprite: {fileID: 359111555}
+  on: {fileID: 0}
+  off: {fileID: 0}
+  sprite: {fileID: 0}
+  light1: {fileID: 0}
+  light2: {fileID: 0}
 --- !u!61 &359111557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1920,7 +1922,7 @@ GameObject:
   - component: {fileID: 925735113}
   m_Layer: 0
   m_Name: Lamp_1
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4495,7 +4497,7 @@ GameObject:
   - component: {fileID: 1226195327}
   m_Layer: 0
   m_Name: Lamp_2
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13629,7 +13631,7 @@ Transform:
   - {fileID: 925735112}
   - {fileID: 1962628459}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063465009
 GameObject:
