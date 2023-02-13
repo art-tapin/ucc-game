@@ -37,7 +37,7 @@ public class Door : Interactable
         sprite = gameObject.GetComponent<SpriteRenderer>();
         sprite.sprite = closed;
         isClosed = false;
-        GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
+        GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = true;
     }
 }
 
