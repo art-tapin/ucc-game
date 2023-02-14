@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
-    public Light directionalLight; // this is the post processing volume
+    public UnityEngine.Light directionalLight;
 
     public float tick = 1000; // Increasing the tick, increases second rate
     public float seconds = 0;
@@ -10,13 +10,13 @@ public class DayNightCycle : MonoBehaviour
     public int hours = 12;
     public int days = 1;
 
-    [SerializeField] private Light lighter;
+    // [SerializeField] private Light lighter;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        directionalLight = gameObject.GetComponent<Light>();
+        directionalLight = gameObject.GetComponent<UnityEngine.Light>();
     }
 
     // Update is called once per frame
@@ -47,12 +47,9 @@ public class DayNightCycle : MonoBehaviour
             days += 1;
         }
 
-        //ControlDirectionalLight(); // changes post processing volume after calculation
+        ControlDirectionalLight(); // changes post processing volume after calculation
     }
-}
-
-    /*
-
+    
     public void ControlDirectionalLight() // used to adjust the post processing slider.
     {
         
@@ -70,4 +67,4 @@ public class DayNightCycle : MonoBehaviour
 
     }
 }
-*/
+

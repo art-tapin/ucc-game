@@ -48,7 +48,7 @@ public class Light : Interactable
         //Debug.Log(lights[0].name + lights[1].name);
         //sprite = gameObject.GetComponent<SpriteRenderer>();
         //sprite.sprite = off;
-        isOff = true;
+        isOff = false;
         //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
     }
 }
