@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4537922ae0db034fb83bf96f2462b1e
+guid: 509c00bd5c642424ab6762dd8691b408
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites-fall_0
+      name: girl-idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51ef717d965489948902b3702294fd35
-      internalID: 557601314
+      spriteID: 0e790e6f6da569d4f86eff63d9dbc9f7
+      internalID: 1505071072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites-fall_1
+      name: girl-idle_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a3b52d0afe7c874ea4f87d1920addcd
-      internalID: -1203109327
+      spriteID: 125113902e4f0f54fa90174f5f62e1e2
+      internalID: -975092663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites-fall_2
+      name: girl-idle_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defcdd8a8a2d24247a2d451d1dec2040
+      internalID: 239021523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl-idle_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 533b116531bf66d448de119c82a9f2cd
-      internalID: 324644110
+      spriteID: 00269e9c314f0ba45a4cfed431a286f5
+      internalID: -2062361927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites-fall_3
+      name: girl-idle_4
       rect:
         serializedVersion: 2
-        x: 144
+        x: 128
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +203,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9bfd350dd780e04a9892c0a80bc160c
-      internalID: -423068152
+      spriteID: c15767c75575ab9428c3e2a1002cc4ad
+      internalID: 670926651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl-idle_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc8510c90e1a2c4aa4d87fe215e695a
+      internalID: -959879452
       vertices: []
       indices: 
       edges: []
@@ -199,10 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprites-fall_0: 557601314
-      sprites-fall_2: 324644110
-      sprites-fall_1: -1203109327
-      sprites-fall_3: -423068152
+      girl-idle_5: -959879452
+      girl-idle_0: 1505071072
+      girl-idle_1: -975092663
+      girl-idle_4: 670926651
+      girl-idle_2: 239021523
+      girl-idle_3: -2062361927
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
