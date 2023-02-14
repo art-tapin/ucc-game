@@ -26,13 +26,11 @@ public class AnswersData : MonoBehaviour
         {
             Debug.Log("Correct");
             quizManager.correct();
-            // Add score
         }
         else
         {
             Debug.Log("Incorrect");
-            //quizManager.correct();
-            // Remove score
+            quizManager.incorrect();
         }
     }
      
