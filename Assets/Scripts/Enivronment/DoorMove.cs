@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-
-public class Door : Interactable
+public class DoorMove : Interactable
 {
     public SpriteRenderer door;
     private bool isClosed;
-    //public GameObject target;
+    public GameObject target;
 
     public override void Interact()
     {
@@ -19,7 +17,10 @@ public class Door : Interactable
         else
         {
             door.GetComponent<SpriteRenderer>().enabled = false;
-            //SceneControl.TransitionPlayer(target.transform.position);
+            //WaitForSeconds(.5f);
+            SceneControl.TransitionPlayer(target.transform.position);
+            
+            door.GetComponent<SpriteRenderer>().enabled = true;
 
         }
         isClosed = !isClosed;
@@ -30,4 +31,3 @@ public class Door : Interactable
         isClosed = false;
     }
 }
-

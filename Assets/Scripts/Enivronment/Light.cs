@@ -4,51 +4,49 @@ using UnityEngine;
 
 public class Light : Interactable
 {
-    //public Sprite on;
-   // public Sprite off;
-    public Light lamp1;
-    public Light lamp2;
-    //
-    //public SpriteRenderer sprite;
-    //private GameObject[] lights;
+    //public Light lamp1;
+    //public Light lamp2;
     private bool isOff;
+
+    public Light[] lights;
 
     public override void Interact()
     {
         if (isOff)
         {
-            //sprite.sprite = off;
             Debug.Log("OFF");
-            //lights[0].GetComponent<UnityEngine.Light>().enabled = false;
-            //lights[1].GetComponent<UnityEngine.Light>().enabled = false;
-            lamp1.GetComponent<UnityEngine.Light>().enabled = false;
-            lamp2.GetComponent<UnityEngine.Light>().enabled = false;
-            //GameObject.Find("Lamp_4").GetComponent<UnityEngine.Light>().enabled = true;
-            // TODO - Add scene change to Hallway
-            // TODO - Add sound effect
+            //lamp1.GetComponent<UnityEngine.Light>().enabled = false;
+            //if(lamp2 != null) {
+            //lamp2.GetComponent<UnityEngine.Light>().enabled = false;
+
+            for(int i = 0; i < lights.Length; i++)
+            {
+                lights[i].GetComponent<UnityEngine.Light>().enabled = false;
+            }
         }
+        
         else
         {
-            //sprite.sprite = on;
             Debug.Log("ON");
-            //lights[0].GetComponent<UnityEngine.Light>().enabled = true;
-            //lights[1].GetComponent<UnityEngine.Light>().enabled = true;
-            lamp1.GetComponent<UnityEngine.Light>().enabled = true;
-            lamp2.GetComponent<UnityEngine.Light>().enabled = true;
-            //GameObject.Find("Lamp_3").GetComponent<UnityEngine.Light>().enabled = true;
-            //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
+            //lamp1.GetComponent<UnityEngine.Light>().enabled = true;
+            //if(lamp2 != null) {
+            //lamp2.GetComponent<UnityEngine.Light>().enabled = true;
+            
+
+            for(int i = 0; i < lights.Length; i++)
+            {
+                lights[i].GetComponent<UnityEngine.Light>().enabled = true;
+            }
         }
         isOff = !isOff;
     }
 
     private void Start()
-    {
-        //lights = GameObject.FindGameObjectsWithTag("Light");
-        // lights[0].GetComponent<UnityEngine.Light>()
-        //Debug.Log(lights[0].name + lights[1].name);
-        //sprite = gameObject.GetComponent<SpriteRenderer>();
-        //sprite.sprite = off;
+    {        
         isOff = false;
-        //GameObject.Find("Door_Closed_Bedroom").GetComponent<SpriteRenderer>().enabled = false;
+        for(int i = 0; i < lights.Length; i++)
+            {
+                lights[i].GetComponent<UnityEngine.Light>().enabled = false;
+            }    
     }
 }
