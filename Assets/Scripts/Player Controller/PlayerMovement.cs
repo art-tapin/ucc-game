@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 if (rc.IsInteractable()) {
                     rc.Interact();
                     // if more than one object in range remove this return
-                    return;
+                    //return;
                 }                
             }            
         }
