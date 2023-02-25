@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioSource jumpSoundEffect;
 
-    private Vector2 boxSize = new Vector2(0.1f, 1f);    
+    private Vector2 boxSize = new Vector2(1f, 1.5f);    
 
     // Start is called before the first frame update
     private void Start()
@@ -107,9 +107,11 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
 
         if (hits.Length > 0) {
+            Debug.Log("hits.Length: " + hits.Length);
             foreach(RaycastHit2D rc in hits) { 
                 
                 if (rc.IsInteractable()) {
+                    Debug.Log("Interactable: " + rc.collider.name);
                     rc.Interact();
                     // if more than one object in range remove this return
                     //return;
