@@ -12796,6 +12796,10 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 141167091201294466, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
     value: {fileID: 1132265339679406785}
+  - key: {fileID: -6204976861376550341, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
+    value: {fileID: 2084376932}
+  - key: {fileID: -6607435938642649672, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
+    value: {fileID: 1472974089}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1264680330
@@ -24651,11 +24655,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 1753689657}
+  defaultTick: 1000
   tick: 1000
   seconds: 0
   mins: 0
   hours: 23
   days: 1
+  timeLapse: 0
+  timeLapseMultiplier: 0.5
+  timeline: {fileID: 1264680329}
 --- !u!108 &1753689657
 Light:
   m_ObjectHideFlags: 0
