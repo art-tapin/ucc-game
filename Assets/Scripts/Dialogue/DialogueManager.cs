@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
+    
     public void StartDialogue(Dialogue dialogue)
     {
         //GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
@@ -48,6 +49,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(typeSentence(sentence));
         //dialogueText.text = sentence;
     }
+    
     IEnumerator typeSentence(string sentence)
     {
         dialogueText.text = "";
