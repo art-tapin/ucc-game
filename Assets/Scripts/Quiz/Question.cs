@@ -38,13 +38,3 @@ public class Questions// : ScriptableObject
     }*/
 
 }
-
-/*
-public struct Answer 
-{
-    [SerializeField] private string _answerText;
-    public string AnswerText { get { return _answerText; } }
-
-    [SerializeField] private bool _isCorrect;
-    public bool IsCorrect { get { return _isCorrect; } }
-}*/
