@@ -18,6 +18,16 @@ public class QuizManager : MonoBehaviour
     public GameObject confirmingDialogue;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
+    public AudioSource audioSource;
+
+    public GameObject player;
+    public SpriteRenderer sittingPlayer;
+    public Camera cam1;
+    public Camera cam2;
+    //public AudioSource wwtbamMainTheme;
+    //public AudioSource questionSound;
+    //public AudioSource incorrectSound;
+    //public AudioSource endSound;
 
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
@@ -83,6 +93,8 @@ public class QuizManager : MonoBehaviour
     {
         isSelected = false;     //enables to click buttons again
         changeColour(-1);
+        //System.Threading.Thread.Sleep(3000);
+        //Debug.Log("PLAY SOUND");
         if (toContinue)
         {
             //change the correct answer to different index
@@ -182,13 +194,20 @@ public class QuizManager : MonoBehaviour
     {
         if (questions.Count > 0)
         {
-            currentQuestionIndex = Random.Range(0, questions.Count);
+            //currentQuestionIndex = Random.Range(0, questions.Count);
+            currentQuestionIndex = 0;
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
         }
         else 
         {
             questionCanvas.SetActive(false);
+            player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<SpriteRenderer>().enabled = true;
+            cam1.enabled = true;
+            cam2.enabled = false;
+            sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+            audioSource.Stop();
         }
     }
 }
