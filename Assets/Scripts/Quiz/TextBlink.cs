@@ -8,9 +8,9 @@ public class TextBlink : MonoBehaviour
 {
     
     TextMeshProUGUI text;
-    public float blinkFadeInTime = 0.3f;
-    public float blinkFadeOutTime = 0.2f;
-    public float blinkDuration = 0.4f;
+    public float blinkFadeInTime = 0.001f;
+    public float blinkFadeOutTime = 0.001f;
+    public float blinkDuration = 0.005f;
     private float timeChecker = 0;
     private Color oldColor;
 
@@ -23,7 +23,8 @@ public class TextBlink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeChecker += Time.deltaTime;
+        timeChecker += Time.fixedDeltaTime;
+        //timeChecker += Time.deltaTime;
         if (timeChecker < blinkFadeInTime)
         {
             text.color = new Color(oldColor.r, oldColor.g, oldColor.b, timeChecker / blinkFadeInTime);

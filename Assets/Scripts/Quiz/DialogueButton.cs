@@ -11,21 +11,13 @@ public class DialogueButton : MonoBehaviour
    //public static bool toContinue;
 
 
-   private void Awake()
-   {
-       yesButton.onClick.AddListener(Continue);
-       noButton.onClick.AddListener(NotContinue);
-   }
-
    public void NotContinue()
     {
-        Debug.Log("NotContinue");
         quizManager.continueNotContinue(false);
     }
 
     public void Continue()
     {
-        Debug.Log("Continue");
         quizManager.continueNotContinue(true);
     }
 }

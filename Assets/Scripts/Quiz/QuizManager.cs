@@ -7,63 +7,62 @@ using TMPro;
 public class QuizManager : MonoBehaviour
 {
     public List<Questions> questions;
-    public Button[] options;
+    public GameObject[] options;
     public int currentQuestionIndex;
     public static bool isIncorrect = false;
-    public bool isSelected = false;
-    
+    public bool isSelected = false;    
+
     public TextMeshProUGUI QuestionText;
     public TextMeshProUGUI incorrectText;
     private TextMeshProUGUI selected;
     public GameObject confirmingDialogue;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
+
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
-    //[SerializeField] private Button yesButton;
-    //[SerializeField] private Button noButton;
 
-    IEnumerator Delay(float seconds)
+
+    IEnumerator revertColor(float seconds, GameObject CAB)
     {
         yield return new WaitForSeconds(seconds);
-    }
-
-    public void correct(int qu)
-    {
-        
-        options[qu-1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
-        TextMeshProUGUI text = options[qu-1].GetComponentInChildren<TextMeshProUGUI>();
+        CAB.GetComponent<Image>().color = Color.white;
+        CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
+        TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = false;
-        
-        Debug.Log("should stop flashing color");
-
-        //questions.RemoveAt(currentQuestionIndex);
-        //generateQuestion();
+        correct();
     }
 
-    public void incorrect()
+    GameObject changeCorrectAnswerColor()
     {
         int q = questions[currentQuestionIndex].CorrectAnswer;
-        options[q-1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.green; 
-        TextMeshProUGUI text = options[q-1].GetComponentInChildren<TextMeshProUGUI>();
+        GameObject correctAnswerButton = options[q-1];
+        correctAnswerButton.GetComponent<Image>().color = Color.green;
+        correctAnswerButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.green; 
+        TextMeshProUGUI text = correctAnswerButton.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = true;
-
-        //insert pause
-        StartCoroutine(Delay(5f));
-
-        correct(q);
-        //insert insults
-        
-        /*
-        int insultsIndex;
-        string[] insults = {"Try again!", "You're not very good at this"};
-        insultsIndex = Random.Range(0, insults.Length);
-        string incorrectText = insults[insultsIndex];
-        isIncorrect = true;
-        setIncorrectText(incorrectText);*/
+        return correctAnswerButton;
     }
+
+    
+
+    public void correct()
+    {
+        //disable blinking of button
+        questions.RemoveAt(currentQuestionIndex);
+        generateQuestion();
+    }
+
+    
+    public void incorrect()
+    {
+        GameObject correctAnswerButton = changeCorrectAnswerColor();
+        //insert pause
+        StartCoroutine(revertColor(3, correctAnswerButton));
+    }
+
 
     public void setIncorrectText(string text)
     {
@@ -71,12 +70,13 @@ public class QuizManager : MonoBehaviour
         incorrectButton.SetActive(true);
     }
 
+    
     public void continueNotContinue(bool toContinue)
     {
+        isSelected = false;     //enables to click buttons again
         changeColour(-1);
         if (toContinue)
         {
-            Debug.Log("Continue");
             //change the correct answer to different index
             if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1)
             {
@@ -106,32 +106,55 @@ public class QuizManager : MonoBehaviour
     {
         if (pressedButtonIndex != i && pressedButtonIndex >= 0)
         {
-            selected = options[pressedButtonIndex].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            selected = pressedButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             selected.color = Color.white;
+            pressedButton.GetComponent<Image>().color = Color.white;
+        }
+    }
+
+    void enableButtons()
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<Button>().interactable = true;
         }
     }
     
-    void Update()
+    void disableButtons()
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<Button>().interactable = false;
+        }
+    }
+
+    //show the dialogue box to confirm the answer
+    public void showConfirmingDialogue()
     {
         if (isSelected && pressedButtonIndex >= 0)
         {
-            confirmingDialogue.SetActive(true); 
-            isSelected = false;       
-            Debug.Log("Picked an answer");
-            options[pressedButtonIndex].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red; 
-        } 
-
-        if (isIncorrect && Input.GetMouseButtonDown(0))
-        {
-            incorrectButton.SetActive(false);
+            confirmingDialogue.SetActive(true);  
+            pressedButton = options[pressedButtonIndex].GetComponent<Button>();      
+            pressedButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red;
+            pressedButton.GetComponent<Image>().color = Color.red;
+            disableButtons(); 
         }
+        else
+        {
+            enableButtons();
+        }        
+    }
+        
+    
+    void Update()
+    {
+        showConfirmingDialogue();
     }
 
     private void Start()
     {
         generateQuestion();
     }
-
 
     void SetAnswers()
     {
@@ -151,11 +174,6 @@ public class QuizManager : MonoBehaviour
     {
         if (questions.Count > 0)
         {
-            /*
-            if (questions.Count == 1)
-            {
-                nextButton.SetActive(false);
-            }*/
             currentQuestionIndex = Random.Range(0, questions.Count);
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
@@ -164,6 +182,5 @@ public class QuizManager : MonoBehaviour
         {
             questionCanvas.SetActive(false);
         }
-        
     }
 }

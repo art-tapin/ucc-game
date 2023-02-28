@@ -15,17 +15,6 @@ public class AnswersData : MonoBehaviour
         quizManager.changeColour(index);
         quizManager.isSelected = true;
         quizManager.pressedButtonIndex = index;
-        /*
-        if (isCorrect)
-        {
-            Debug.Log("Not Selected - Correct");
-            quizManager.correct();
-        }
-        else
-        {
-            Debug.Log("Not Selected - Incorrect");
-            quizManager.incorrect();
-        }*/
     }
      
 }
