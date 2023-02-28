@@ -33,6 +33,11 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Button pressedButton;
 
 
+    IEnumerator delay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        
+    }
 
     IEnumerator playSound(float seconds/*, AudioClip sound*/)
     {
@@ -40,10 +45,11 @@ public class QuizManager : MonoBehaviour
         //AudioSource.PlayClipAtPoint(sound, transform.position);
     }
     
+    //disable blinking of button and revert the colour to white
     IEnumerator revertColor(float seconds, GameObject CAB)
     {
         yield return new WaitForSeconds(seconds);
-        playSound(2/*, CAB.GetComponent<AnswersData>().sound*/);
+        StartCoroutine(playSound(2/*, CAB.GetComponent<AnswersData>().sound*/));
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
@@ -69,7 +75,7 @@ public class QuizManager : MonoBehaviour
 
     public void correct()
     {
-        //disable blinking of button
+        //remove the question from the list
         questions.RemoveAt(currentQuestionIndex);
         generateQuestion();
     }
@@ -77,6 +83,7 @@ public class QuizManager : MonoBehaviour
     
     public void incorrect()
     {
+        delay(2);
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertColor(3, correctAnswerButton));
     }
