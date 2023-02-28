@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Light : Interactable
 {
@@ -8,7 +9,7 @@ public class Light : Interactable
     //public Light lamp2;
     private bool isOff;
 
-    public Light[] lights;
+    public Light2D[] lights;
 
     public override void Interact()
     {
@@ -21,7 +22,7 @@ public class Light : Interactable
 
             for(int i = 0; i < lights.Length; i++)
             {
-                lights[i].GetComponent<UnityEngine.Light>().enabled = false;
+                lights[i].enabled = false;
             }
         }
         
@@ -35,7 +36,7 @@ public class Light : Interactable
 
             for(int i = 0; i < lights.Length; i++)
             {
-                lights[i].GetComponent<UnityEngine.Light>().enabled = true;
+                lights[i].enabled = true;
             }
         }
         isOff = !isOff;
@@ -46,7 +47,7 @@ public class Light : Interactable
         isOff = false;
         for(int i = 0; i < lights.Length; i++)
             {
-                lights[i].GetComponent<UnityEngine.Light>().enabled = false;
+                lights[i].enabled = false;
             }    
     }
 }

@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 
-public class DayNightCycle : MonoBehaviour
+public class DayNightCycleURP : MonoBehaviour
 {
-    public UnityEngine.Light directionalLight;
+    // [FormerlySerializedAs("directionalLight")] public UnityEngine.Light globalLight;
+    public Light2D globalLight;
 
     public float defaultTick = 1000;
     public float tick = 1000; // Increasing the tick, increases second rate
@@ -23,7 +26,7 @@ public class DayNightCycle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        directionalLight = gameObject.GetComponent<UnityEngine.Light>();
+        globalLight = gameObject.GetComponent<Light2D>();
     }
 
     // Update is called once per frame
@@ -80,13 +83,13 @@ public class DayNightCycle : MonoBehaviour
         
         if (hours >= 20 && hours <= 24) // dusk at 21:00 / 9pm    -   until 22:00 / 10pm
         {
-            directionalLight.intensity = 1 - (getMins() - 20 * 60) * 0.004167f; //const = 1 / hour difference * 60
+            globalLight.intensity = 1 - (getMins() - 20 * 60) * 0.004167f; //const = 1 / hour difference * 60
             //lighter.intensity = 4;
 
         }
         if (hours >= 5 && hours <= 11) // Dawn at 6:00 / 6am    -   until 7:00 / 7am
         {
-            directionalLight.intensity = (getMins() - 5 * 60) * 0.00277f;
+            globalLight.intensity = (getMins() - 5 * 60) * 0.00277f;
             //lighter.intensity = 0;
         }
 
