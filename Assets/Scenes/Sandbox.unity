@@ -10644,6 +10644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuizCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3642753706249649646, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3642753706249649650, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_Pivot.x
       value: 0
