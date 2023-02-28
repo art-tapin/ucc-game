@@ -24,6 +24,7 @@ public class DayNightCycle : MonoBehaviour
     void Start()
     {
         directionalLight = gameObject.GetComponent<UnityEngine.Light>();
+        //GameObject.Find("ww").GetComponent<TextTrigger>().enabled = false;
     }
 
     // Update is called once per frame
@@ -78,15 +79,15 @@ public class DayNightCycle : MonoBehaviour
     public void ControlDirectionalLight() // used to adjust the post processing slider.
     {
         
-        if (hours >= 12 && hours <= 18) // dusk at 21:00 / 9pm    -   until 22:00 / 10pm
+        if (hours >= 20 && hours <= 24) // dusk at 21:00 / 9pm    -   until 22:00 / 10pm
         {
-            directionalLight.intensity = 1 - (getMins() - 12 * 60) * 0.00277f; 
+            directionalLight.intensity = 1 - (getMins() - 20 * 60) * 0.004167f; 
             //lighter.intensity = 4;
 
         }
-        if (hours >= 6 && hours < 12) // Dawn at 6:00 / 6am    -   until 7:00 / 7am
+        if (hours >= 5 && hours < 11) // Dawn at 6:00 / 6am    -   until 7:00 / 7am
         {
-            directionalLight.intensity = (getMins() - 6 * 60) * 0.00277f;
+            directionalLight.intensity = (getMins() - 5 * 60) * 0.00277f;
             //lighter.intensity = 0;
         }
 
@@ -99,11 +100,20 @@ public class DayNightCycle : MonoBehaviour
 
     public void isTimelineDone()
     {
-         if (timeline.state != PlayState.Playing)
+        if (timeline.state != PlayState.Playing)
         {
             timeLapse = false;
+            //GameObject.Find("ww").GetComponent<TextTrigger>().enabled = true;
+            // get the text trigger and disable
+
         }
-        else timeLapse = true;
+        else { 
+        timeLapse = true;
+        //GameObject.Find("ww").GetComponent<TextTrigger>().enabled = false;
+            
+        }
     }
+
+
 }
 
