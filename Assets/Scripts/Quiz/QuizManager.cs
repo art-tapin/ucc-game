@@ -23,9 +23,16 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Button pressedButton;
 
 
+    IEnumerator playSound(float seconds, AudioClip sound)
+    {
+        yield return new WaitForSeconds(seconds);
+        AudioSource.PlayClipAtPoint(sound, transform.position);
+    }
+    
     IEnumerator revertColor(float seconds, GameObject CAB)
     {
         yield return new WaitForSeconds(seconds);
+        playSound(2, CAB.GetComponent<AnswersData>().sound);
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
