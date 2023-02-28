@@ -13,6 +13,5 @@ public class TextTrigger : MonoBehaviour
         FindObjectOfType<DialogueManager>().StartDialogue(trigger);
         Destroy(gameObject, .5f); 
     }
-
    }
 }
