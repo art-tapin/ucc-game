@@ -21,6 +21,7 @@ public class QuizManager : MonoBehaviour
     public AudioSource audioSource;
 
     public GameObject player;
+    public GameObject icon;
     public SpriteRenderer sittingPlayer;
     public Camera cam1;
     public Camera cam2;
@@ -204,6 +205,7 @@ public class QuizManager : MonoBehaviour
             questionCanvas.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
+            icon.GetComponent<SpriteRenderer>().enabled = true;
             cam1.enabled = true;
             cam2.enabled = false;
             sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;

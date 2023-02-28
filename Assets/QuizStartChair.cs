@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class QuizStartChair : Interactable
 {
-    public GameObject player;    
+    public GameObject player;
+    public GameObject icon;       
     public SpriteRenderer sittingPlayer;   
     private bool isSitting;
 
@@ -27,6 +28,7 @@ public class QuizStartChair : Interactable
             sittingPlayer.GetComponent<SpriteRenderer>().enabled = true;           
             player.GetComponent<SpriteRenderer>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
+            icon.GetComponent<SpriteRenderer>().enabled = false;
 
             cam1.enabled = false;
             cam2.enabled = true;
@@ -51,6 +53,7 @@ public class QuizStartChair : Interactable
             //player.SetActive(false);
             player.GetComponent<SpriteRenderer>().enabled = true;
             player.GetComponent<PlayerMovement>().enabled = true;
+            icon.GetComponent<SpriteRenderer>().enabled = true;
 
             quiz.SetActive(false);
             //quizTrigger.GetComponent<QuizTrigger>().enabled = false;
