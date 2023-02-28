@@ -60,6 +60,10 @@ public class QuizManager : MonoBehaviour
     {
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         //insert pause
+        //delay for 5 seconds
+        
+        
+
         StartCoroutine(revertColor(3, correctAnswerButton));
     }
 
