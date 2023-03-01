@@ -24,6 +24,7 @@ public class QuizManager : MonoBehaviour
     public SpriteRenderer sittingPlayer;
     public Camera cam1;
     public Camera cam2;
+
     //public AudioSource wwtbamMainTheme;
     //public AudioSource questionSound;
     //public AudioSource incorrectSound;
@@ -35,8 +36,7 @@ public class QuizManager : MonoBehaviour
 
     IEnumerator delay(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
-        
+        yield return new WaitForSeconds(seconds);        
     }
 
     IEnumerator playSound(float seconds/*, AudioClip sound*/)
@@ -100,16 +100,21 @@ public class QuizManager : MonoBehaviour
     {
         isSelected = false;     //enables to click buttons again
         changeColour(-1);
-        //System.Threading.Thread.Sleep(3000);
-        //Debug.Log("PLAY SOUND");
+        // Play sound here
+        // highlight the answer button (yes or no)
+        // 
+        
+        
         if (toContinue)
         {
+            System.Threading.Thread.Sleep(2000);
             //change the correct answer to different index
             if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1)
             {
                 switch (pressedButtonIndex)
                 {
                     case 0:
+
                         questions[currentQuestionIndex].CorrectAnswer = 2;
                         break;
                     case 1:
