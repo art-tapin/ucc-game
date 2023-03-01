@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Questions// : ScriptableObject
 {
     public string Question;
+    public bool keepCorrectAnswer;
     public string[] Answers;
     public int CorrectAnswer;
 
