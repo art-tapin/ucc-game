@@ -50,6 +50,8 @@ public class QuizManager : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         StartCoroutine(playSound(2/*, CAB.GetComponent<AnswersData>().sound*/));
+        //play sound incorrect
+
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
@@ -65,6 +67,7 @@ public class QuizManager : MonoBehaviour
         GameObject correctAnswerButton = options[q-1];
         correctAnswerButton.GetComponent<Image>().color = Color.green;
         correctAnswerButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.green; 
+        // play correct sound
         TextMeshProUGUI text = correctAnswerButton.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = true;
@@ -78,12 +81,13 @@ public class QuizManager : MonoBehaviour
         //remove the question from the list
         questions.RemoveAt(currentQuestionIndex);
         generateQuestion();
+        // play sound
     }
 
     
     public void incorrect()
     {
-        delay(2);
+        //delay(2);
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertColor(3, correctAnswerButton));
     }
@@ -109,12 +113,13 @@ public class QuizManager : MonoBehaviour
         {
             System.Threading.Thread.Sleep(2000);
             //change the correct answer to different index
-            if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1)
+            if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1 &&
+                questions[currentQuestionIndex].keepCorrectAnswer == false)
+
             {
                 switch (pressedButtonIndex)
                 {
                     case 0:
-
                         questions[currentQuestionIndex].CorrectAnswer = 2;
                         break;
                     case 1:
@@ -130,6 +135,7 @@ public class QuizManager : MonoBehaviour
                 options[pressedButtonIndex].GetComponent<AnswersData>().isCorrect = false;
             }
             incorrect();
+            
         }
         else
         {
