@@ -192,6 +192,8 @@ public class QuizManager : MonoBehaviour
     private void Start()
     {
         generateQuestion();
+        cam1.enabled = true;
+        cam2.enabled = false;
     }
 
     void SetAnswers()
