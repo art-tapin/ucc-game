@@ -25,6 +25,9 @@ public class QuizManager : MonoBehaviour
     public Camera cam1;
     public Camera cam2;
 
+    //public Light[] lights;
+
+
     //public AudioSource wwtbamMainTheme;
     //public AudioSource questionSound;
     //public AudioSource incorrectSound;
@@ -194,6 +197,7 @@ public class QuizManager : MonoBehaviour
         generateQuestion();
         cam1.enabled = true;
         cam2.enabled = false;
+        //lights.enabled = false;
     }
 
     void SetAnswers()
