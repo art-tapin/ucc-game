@@ -18,11 +18,26 @@ public class QuizManager : MonoBehaviour
     public GameObject confirmingDialogue;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
+    public AudioSource audioSource;
+
+    public GameObject player;
+    public SpriteRenderer sittingPlayer;
+    public Camera cam1;
+    public Camera cam2;
+
+    //public AudioSource wwtbamMainTheme;
+    //public AudioSource questionSound;
+    //public AudioSource incorrectSound;
+    //public AudioSource endSound;
 
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
 
 
+    IEnumerator delay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);        
+    }
 
     IEnumerator playSound(float seconds/*, AudioClip sound*/)
     {
@@ -30,10 +45,13 @@ public class QuizManager : MonoBehaviour
         //AudioSource.PlayClipAtPoint(sound, transform.position);
     }
     
+    //disable blinking of button and revert the colour to white
     IEnumerator revertColor(float seconds, GameObject CAB)
     {
         yield return new WaitForSeconds(seconds);
-        playSound(2/*, CAB.GetComponent<AnswersData>().sound*/);
+        StartCoroutine(playSound(2/*, CAB.GetComponent<AnswersData>().sound*/));
+        //play sound incorrect
+
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
@@ -49,6 +67,7 @@ public class QuizManager : MonoBehaviour
         GameObject correctAnswerButton = options[q-1];
         correctAnswerButton.GetComponent<Image>().color = Color.green;
         correctAnswerButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.green; 
+        // play correct sound
         TextMeshProUGUI text = correctAnswerButton.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = true;
@@ -59,14 +78,16 @@ public class QuizManager : MonoBehaviour
 
     public void correct()
     {
-        //disable blinking of button
+        //remove the question from the list
         questions.RemoveAt(currentQuestionIndex);
         generateQuestion();
+        // play sound
     }
 
     
     public void incorrect()
     {
+        //delay(2);
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertColor(3, correctAnswerButton));
     }
@@ -83,10 +104,18 @@ public class QuizManager : MonoBehaviour
     {
         isSelected = false;     //enables to click buttons again
         changeColour(-1);
+        // Play sound here
+        // highlight the answer button (yes or no)
+        // 
+        
+        
         if (toContinue)
         {
+            System.Threading.Thread.Sleep(2000);
             //change the correct answer to different index
-            if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1)
+            if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1 &&
+                questions[currentQuestionIndex].keepCorrectAnswer == false)
+
             {
                 switch (pressedButtonIndex)
                 {
@@ -106,6 +135,7 @@ public class QuizManager : MonoBehaviour
                 options[pressedButtonIndex].GetComponent<AnswersData>().isCorrect = false;
             }
             incorrect();
+            
         }
         else
         {
@@ -182,13 +212,20 @@ public class QuizManager : MonoBehaviour
     {
         if (questions.Count > 0)
         {
-            currentQuestionIndex = Random.Range(0, questions.Count);
+            //currentQuestionIndex = Random.Range(0, questions.Count);
+            currentQuestionIndex = 0;
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
         }
         else 
         {
             questionCanvas.SetActive(false);
+            player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<SpriteRenderer>().enabled = true;
+            cam1.enabled = true;
+            cam2.enabled = false;
+            sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+            audioSource.Stop();
         }
     }
 }

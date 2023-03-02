@@ -11,6 +11,7 @@ public class QuizTrigger : MonoBehaviour
    public GameObject platform;
    public GameObject curtain;
    public Animator animator;
+   public AudioSource audioSource;
 
    private void OnTriggerEnter2D(Collider2D collision) {
 
@@ -22,6 +23,9 @@ public class QuizTrigger : MonoBehaviour
         cam2.enabled = true;
         table.GetComponent<WaypointFollower>().enabled = true;
         platform.GetComponent<WaypointFollower>().enabled = true;
+        // play audio
+        audioSource.Play();
+
         curtain.GetComponent<Animator>().enabled = true;
         // delay the quiz from appearing
         //table.SetActive(true);
@@ -46,5 +50,8 @@ public class QuizTrigger : MonoBehaviour
         curtain.GetComponent<Animator>().enabled = false;
         animator.SetBool("isOpen", false);
        //table.SetActive(false);
+       //disble audiosource
+    
+        audioSource.Stop();
 }
 }
