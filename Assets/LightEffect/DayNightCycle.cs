@@ -24,6 +24,7 @@ public class DayNightCycle : MonoBehaviour
     void Start()
     {
         directionalLight = gameObject.GetComponent<UnityEngine.Light>();
+        //GameObject.Find("ww").GetComponent<TextTrigger>().enabled = false;
     }
 
     // Update is called once per frame
@@ -99,11 +100,20 @@ public class DayNightCycle : MonoBehaviour
 
     public void isTimelineDone()
     {
-         if (timeline.state != PlayState.Playing)
+        if (timeline.state != PlayState.Playing)
         {
             timeLapse = false;
+            //GameObject.Find("ww").GetComponent<TextTrigger>().enabled = true;
+            // get the text trigger and disable
+
         }
-        else timeLapse = true;
+        else { 
+        timeLapse = true;
+        //GameObject.Find("ww").GetComponent<TextTrigger>().enabled = false;
+            
+        }
     }
+
+
 }
 
