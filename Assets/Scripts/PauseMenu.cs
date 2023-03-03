@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public Animator animator;
     //public AudioSource wwtbamAudio;
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     {   Debug.Log("resume");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        animator.SetBool("zoomOutScene", false);
         GameIsPaused = false;
         //wwtbamAudio.Play();
     }
