@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Light
   - OpeningText
-  - cameraControl
   layers:
   - Default
   - TransparentFX

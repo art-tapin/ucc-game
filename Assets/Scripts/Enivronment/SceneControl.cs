@@ -9,8 +9,6 @@ public class SceneControl : MonoBehaviour
     private static SceneControl instance;
 
     private GameObject player;
-    public Animator animator;
-    private bool isPlayClicked;
 
     private void Awake()
     {
@@ -28,8 +26,6 @@ public class SceneControl : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        isPlayClicked = PlayerPrefs.GetInt("ZoomOutScene", 0) == 1;
-        animator.SetBool("zoomOutScene", !isPlayClicked);
     }
 
     public static void TransitionPlayer(Vector3 pos)
