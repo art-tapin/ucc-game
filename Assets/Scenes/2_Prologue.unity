@@ -6729,7 +6729,7 @@ GameObject:
   - component: {fileID: 616105879}
   m_Layer: 0
   m_Name: CameraControl
-  m_TagString: Untagged
+  m_TagString: cameraControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16403,6 +16403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 82021374}
+  animator: {fileID: 616105879}
 --- !u!4 &1171693917
 Transform:
   m_ObjectHideFlags: 0
@@ -19662,7 +19663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1432865494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19759,7 +19760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 798269730871389552}
-  animator: {fileID: 616105879}
 --- !u!1 &1441263404
 GameObject:
   m_ObjectHideFlags: 0
