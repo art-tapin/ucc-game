@@ -18,6 +18,7 @@ public class QuizStartChair : Interactable
     public AudioSource audioSource;
 
     //public Light[] lights;
+    public GameObject lightOrigin;
     
 
     public override void Interact()
@@ -38,7 +39,18 @@ public class QuizStartChair : Interactable
             curtain.GetComponent<Animator>().enabled = true;
 
             quiz.SetActive(true);
+
+
+            // access the light origin and enable the bool inside the script
+
+            //lightOrigin.GetComponent<LightControl>().enabled = true;
+            lightOrigin.GetComponent<LightControl>().turnOnFlag = true;
+            lightOrigin.GetComponent<LightControl>().focuseFlag = true;
+
             animator.SetBool("isOpen", true);
+            //lightOrigin.GetComponent<Lightfocusing>().enabled = true;
+
+
 
             //System.Threading.Thread.Sleep(1000);
             //lights.SetActive(true);
