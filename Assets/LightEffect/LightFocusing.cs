@@ -29,14 +29,9 @@ public class LightFocusing : MonoBehaviour
         // rot = angle / tick;
         distance = Vector2.Distance(target.localPosition, hehe.localPosition);
         distAdd = distance / tick;
-        
-        angle = CustomAngle(hehe.localPosition, target.localPosition, CoordinatesByAngle(hehe.eulerAngles.z + 90));
-        Debug.Log(gameObject.name + ":" + CoordinatesByAngle(hehe.eulerAngles.z + 90));
-        Debug.Log(gameObject.name + ": cos:" + Math.Cos(hehe.eulerAngles.z + 90));
-        Debug.Log(gameObject.name + ":" + (hehe.eulerAngles.z + 90));
+        angle = CustomAngle(hehe.localPosition, target.localPosition);
         rot = angle / tick;
-        
-        Debug.Log(gameObject.name + ":"+ CustomAngle(hehe.position, target.position, CoordinatesByAngle(hehe.eulerAngles.z + 90)));
+        Debug.Log(gameObject.name + ":"+ CustomAngle(hehe.position, target.position));
         // light.pointLightOuterRadius = 20;
         if (hehe.position.x > target.position.x)
         {
@@ -58,19 +53,13 @@ public class LightFocusing : MonoBehaviour
         }
         
     }
-
-    private Vector2 CoordinatesByAngle(float objAngle)
-    {
-        objAngle = (float) (objAngle * Math.PI / 180);
-        return new Vector2((float) Math.Cos(objAngle), (float) Math.Sin(objAngle));
-    }
     
-    public float CustomAngle(Vector2 from, Vector2 to, Vector2 newOrigin)
+    public float CustomAngle(Vector2 from, Vector2 to)
     {
         float toX = to.x - from.x;
         float toY = to.y - from.y;
-        float lightX = newOrigin.x;
-        float lightY = newOrigin.y;
+        float lightX = 0;
+        float lightY = -1;
         Vector2 toVec = new Vector2(toX, toY);
         Vector2 lightVec = new Vector2(lightX, lightY);
         float num = (float) Math.Sqrt((double) lightVec.sqrMagnitude * (double) toVec.sqrMagnitude);
