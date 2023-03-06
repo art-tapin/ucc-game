@@ -21,7 +21,7 @@ public class QuizManager : MonoBehaviour
     public AudioSource audioSource;
 
     public GameObject player;
-    public SpriteRenderer sittingPlayer;
+    //public SpriteRenderer sittingPlayer;
     public Camera cam1;
     public Camera cam2;
 
@@ -230,7 +230,7 @@ public class QuizManager : MonoBehaviour
             player.GetComponent<SpriteRenderer>().enabled = true;
             cam1.enabled = true;
             cam2.enabled = false;
-            sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+            //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
             audioSource.Stop();
         }
     }

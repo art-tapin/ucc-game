@@ -11,7 +11,7 @@ public class WaypointFollower : MonoBehaviour
 
     private void Start()
     {
-        //GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = true;
+        GameObject.Find("Platform").GetComponent<WaypointFollower>().enabled = true;
     }
 
     
