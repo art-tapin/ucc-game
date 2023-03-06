@@ -16,6 +16,8 @@ public class QuizStartChair : Interactable
     public GameObject curtain;
     public Animator animator;
     public AudioSource audioSource;
+
+    //public Light[] lights;
     
 
     public override void Interact()
@@ -32,10 +34,16 @@ public class QuizStartChair : Interactable
             cam2.enabled = true;
             audioSource.Play();
 
+
             curtain.GetComponent<Animator>().enabled = true;
 
             quiz.SetActive(true);
             animator.SetBool("isOpen", true);
+
+            //System.Threading.Thread.Sleep(1000);
+            //lights.SetActive(true);
+
+            
             //
             //quizTrigger.SetActive(false);
             //quizTrigger.GetComponent<QuizTrigger>().enabled = true;
