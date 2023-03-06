@@ -92,11 +92,7 @@ public class InterviewQuizManager : MonoBehaviour
     {
         isSelected = false;     //enables to click buttons again
         changeColour(-1);
-        // Play sound here
-        // highlight the answer button (yes or no)
-        // 
-        
-        
+        // Play sound here        
         if (toContinue)
         {
             System.Threading.Thread.Sleep(2000);
@@ -123,7 +119,6 @@ public class InterviewQuizManager : MonoBehaviour
                 options[pressedButtonIndex].GetComponent<AnswersData1>().isCorrect = false;
             }
             incorrect();
-            
         }
         else
         {
@@ -158,7 +153,6 @@ public class InterviewQuizManager : MonoBehaviour
         }
     }
      
-    
     void Update()
     {
         if (isSelected && pressedButtonIndex >= 0)
