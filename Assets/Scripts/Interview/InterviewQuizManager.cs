@@ -29,11 +29,9 @@ public class InterviewQuizManager : MonoBehaviour
 
     
     //disable blinking of button and revert the colour to white
-    IEnumerator revertColor(float seconds, GameObject CAB)
+    IEnumerator revertCorrectAnswerColor(float seconds, GameObject CAB)
     {
         yield return new WaitForSeconds(seconds);
-        
-
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
@@ -43,13 +41,24 @@ public class InterviewQuizManager : MonoBehaviour
         enableButtons();    
     }
 
+    void revertPressedButtonColor()
+    {
+        isSelected = false;
+        
+        options[pressedButtonIndex].GetComponent<Image>().color = Color.white;
+        options[pressedButtonIndex].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
+        TextMeshProUGUI text = options[pressedButtonIndex].GetComponentInChildren<TextMeshProUGUI>();
+        TextBlink textBlink = text.GetComponent<TextBlink>();
+        enableButtons();    
+    }
+
+    
     GameObject changeCorrectAnswerColor()
     {
         int q = questions[currentQuestionIndex].CorrectAnswer;
         GameObject correctAnswerButton = options[q-1];
         correctAnswerButton.GetComponent<Image>().color = Color.green;
         correctAnswerButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.green; 
-        // play correct sound
         TextMeshProUGUI text = correctAnswerButton.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = true;
@@ -60,6 +69,9 @@ public class InterviewQuizManager : MonoBehaviour
 
     public void correct()
     {
+        GameObject correctAnswerButton = changeCorrectAnswerColor();
+        StartCoroutine(revertCorrectAnswerColor(3, correctAnswerButton));
+
         //remove the question from the list
         questions.RemoveAt(currentQuestionIndex);
         generateQuestion();
@@ -69,8 +81,9 @@ public class InterviewQuizManager : MonoBehaviour
     
     public void incorrect()
     {
-        GameObject correctAnswerButton = changeCorrectAnswerColor();
-        StartCoroutine(revertColor(3, correctAnswerButton));
+        //GameObject correctAnswerButton = changeCorrectAnswerColor();
+        //StartCoroutine(revertCorrectAnswerColor(3, correctAnswerButton));
+
         // set incorrect text
         int insultsIndex;
         string[] insults = {"Try again!", "You're not very good at this"};
@@ -78,6 +91,9 @@ public class InterviewQuizManager : MonoBehaviour
         string incorrectText = insults[insultsIndex];
         isIncorrect = true;
         setIncorrectText(incorrectText);
+
+        changeColour(pressedButtonIndex);
+        revertPressedButtonColor();
     }
 
 
@@ -159,8 +175,13 @@ public class InterviewQuizManager : MonoBehaviour
         {
             pressedButton = options[pressedButtonIndex].GetComponent<Button>();      
             pressedButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red;
-            pressedButton.GetComponent<Image>().color = Color.red;
-            disableButtons(); 
+            pressedButton.GetComponent<Image>().color = Color.red; 
+        }   
+        if (isIncorrect && Input.GetMouseButtonDown(0))
+        {
+            incorrectButton.SetActive(false);
+            pressedButtonIndex = -1;
+            
         }   
     }
 
