@@ -17,12 +17,13 @@ public class InterviewQuizManager : MonoBehaviour
     private TextMeshProUGUI selected;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
 
+/*
     public GameObject player;
     public SpriteRenderer sittingPlayer;
     public Camera cam1;
-    public Camera cam2;
+    public Camera cam2;*/
 
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
@@ -167,8 +168,9 @@ public class InterviewQuizManager : MonoBehaviour
     private void Start()
     {
         generateQuestion();
+        /*
         cam1.enabled = true;
-        cam2.enabled = false;
+        cam2.enabled = false;*/
     }
 
     void SetAnswers()
@@ -197,12 +199,13 @@ public class InterviewQuizManager : MonoBehaviour
         else 
         {
             questionCanvas.SetActive(false);
+            /*
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
             cam1.enabled = true;
             cam2.enabled = false;
             sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-            audioSource.Stop();
+            audioSource.Stop();*/
         }
     }
 }

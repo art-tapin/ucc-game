@@ -75996,7 +75996,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47149feb4470f0745a1ef3b268789f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions: []
+  questions:
+  - Question: Are you ready?
+    keepCorrectAnswer: 0
+    Answers:
+    - Yes
+    - No
+    CorrectAnswer: 1
+  - Question: Are you ready freddy?
+    keepCorrectAnswer: 0
+    Answers:
+    - Yes
+    - No
+    - omg yessss
+    CorrectAnswer: 1
   options:
   - {fileID: 876945412738423991}
   - {fileID: 876945412731030491}
@@ -76006,11 +76019,6 @@ MonoBehaviour:
   incorrectText: {fileID: 3443912076121844564}
   incorrectButton: {fileID: 3443912075895821893}
   questionCanvas: {fileID: 876945411241117748}
-  audioSource: {fileID: 0}
-  player: {fileID: 0}
-  sittingPlayer: {fileID: 0}
-  cam1: {fileID: 0}
-  cam2: {fileID: 0}
   pressedButtonIndex: -1
   pressedButton: {fileID: 0}
 --- !u!114 &876945411858920938
@@ -76545,21 +76553,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250, y: 30}
   m_SizeDelta: {x: 475, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &876945412731030489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876945412731030491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92802c35072c69946a61c0adb83a8654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCorrect: 0
-  index: 0
-  quizManager: {fileID: 0}
 --- !u!1 &876945412731030491
 GameObject:
   m_ObjectHideFlags: 0
@@ -76572,7 +76565,7 @@ GameObject:
   - component: {fileID: 876945412731030492}
   - component: {fileID: 876945412731030495}
   - component: {fileID: 876945412731030494}
-  - component: {fileID: 876945412731030489}
+  - component: {fileID: 876945412731030496}
   m_Layer: 5
   m_Name: ButtonB
   m_TagString: Untagged
@@ -76632,9 +76625,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 876945412731030489}
+      - m_Target: {fileID: 11500000, guid: f7adad65f0f6a794aae23240961e5689, type: 3}
         m_TargetAssemblyTypeName: AnswersData, Assembly-CSharp
-        m_MethodName: Answer
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76686,6 +76679,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &876945412731030496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876945412731030491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7adad65f0f6a794aae23240961e5689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  index: 0
+  quizManager: {fileID: 876945411577683794}
 --- !u!222 &876945412738423976
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -76738,9 +76746,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 876945412738423989}
-        m_TargetAssemblyTypeName: AnswersData, Assembly-CSharp
-        m_MethodName: Answer
+      - m_Target: {fileID: 11500000, guid: f7adad65f0f6a794aae23240961e5689, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76801,21 +76809,6 @@ RectTransform:
   m_AnchoredPosition: {x: -250, y: 30}
   m_SizeDelta: {x: 475, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &876945412738423989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876945412738423991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92802c35072c69946a61c0adb83a8654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCorrect: 0
-  index: 0
-  quizManager: {fileID: 0}
 --- !u!1 &876945412738423991
 GameObject:
   m_ObjectHideFlags: 0
@@ -76828,7 +76821,7 @@ GameObject:
   - component: {fileID: 876945412738423976}
   - component: {fileID: 876945412738423979}
   - component: {fileID: 876945412738423978}
-  - component: {fileID: 876945412738423989}
+  - component: {fileID: 876945412738423992}
   m_Layer: 5
   m_Name: ButtonA
   m_TagString: Untagged
@@ -76836,6 +76829,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &876945412738423992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876945412738423991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7adad65f0f6a794aae23240961e5689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  index: 0
+  quizManager: {fileID: 876945411577683794}
 --- !u!224 &876945412789838096
 RectTransform:
   m_ObjectHideFlags: 0
