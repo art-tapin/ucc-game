@@ -38,8 +38,10 @@ public class InterviewQuizManager : MonoBehaviour
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = false;
-        correct();    
         enableButtons();    
+         //remove the question from the list
+        questions.RemoveAt(currentQuestionIndex);
+        generateQuestion();
     }
 
     void revertPressedButtonColor()
@@ -50,17 +52,12 @@ public class InterviewQuizManager : MonoBehaviour
         options[pressedButtonIndex].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
         TextMeshProUGUI text = options[pressedButtonIndex].GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
-        enableButtons();    
-        //System.Threading.Thread.Sleep(2000);
-        //remove the question from the list
-        questions.RemoveAt(currentQuestionIndex);
-        generateQuestion();
+        enableButtons();        
     }
 
     
     GameObject changeCorrectAnswerColor()
     {
-        
         int q = questions[currentQuestionIndex].CorrectAnswer;
         GameObject correctAnswerButton = options[q-1];
         correctAnswerButton.GetComponent<Image>().color = Color.green;
@@ -77,10 +74,6 @@ public class InterviewQuizManager : MonoBehaviour
     {
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertCorrectAnswerColor(3, correctAnswerButton));
-        //remove the question from the list
-        //questions.RemoveAt(currentQuestionIndex);
-        //generateQuestion();
-
     }
 
     
