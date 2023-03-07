@@ -65,13 +65,13 @@ public class ColorChange : MonoBehaviour
                 sun.color = sunColor;
                 callCount++;
                 break;
-        case 5:
-            globalLight.intensity -= 0.1f;
-            // sunColor.r = 1;
-            // sunColor.g = 0.33f;
-            // sunColor.b = 0.21f;
-            sun.color = new Color(0.6823f, 0.2823f, 0.1647f, 1);
-            break;
+            case 5:
+                globalLight.intensity -= 0.1f;
+                // sunColor.r = 1;
+                // sunColor.g = 0.33f;
+                // sunColor.b = 0.21f;
+                sun.color = new Color(0.6823f, 0.2823f, 0.1647f, 1);
+                break;
         }
     }
 }
