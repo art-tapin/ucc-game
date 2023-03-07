@@ -20,6 +20,9 @@ public class DayNightCycleURP : MonoBehaviour
     public PlayableDirector timeline;
     public SunMoving sunMoving;
 
+    public Light2D moonLight2D;
+    public SpriteRenderer moonRenderer;
+
 
     // [SerializeField] private Light lighter;
 
@@ -92,12 +95,20 @@ public class DayNightCycleURP : MonoBehaviour
         if (hours >= 20 && hours <= 24) // dusk at 21:00 / 9pm    -   until 22:00 / 10pm
         {
             globalLight.intensity = 1 - (getMins() - 20 * 60) * 0.004167f; //const = 1 / hour difference * 60
+            
+            
+            moonLight2D.intensity = (getMins() - 20 * 60) * 0.004167f;
+            moonRenderer.color = new Color(1, 1, 1, (getMins() - 20 * 60) * 0.004167f);
+            
+            
             //lighter.intensity = 4;
             // sunMoving.Restart();
         }
 
         if (hours >= 0 && hours <= 5)
         {
+            // moonLight2D.intensity = getMins() * 0.00333f;
+            // moonRenderer.color = new Color(1, 1, 1, getMins() * 0.00333f);
             sunMoving.Restart();
         }
         
@@ -105,6 +116,12 @@ public class DayNightCycleURP : MonoBehaviour
         {
             globalLight.intensity = (getMins() - 5 * 60) * 0.00277f;
             //lighter.intensity = 0;
+            if (hours <= 7)
+            {
+                moonLight2D.intensity = 1 - (getMins() - 5 * 60) * 0.0055f;
+                moonRenderer.color = new Color(1, 1, 1, 1 - (getMins() - 5 * 60) * 0.0055f);
+            }
+            
         }
         
 
