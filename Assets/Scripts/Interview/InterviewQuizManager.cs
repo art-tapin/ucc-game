@@ -17,9 +17,8 @@ public class InterviewQuizManager : MonoBehaviour
     private TextMeshProUGUI selected;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
-    //public AudioSource audioSource;
+    /*public AudioSource audioSource;
 
-/*
     public GameObject player;
     public SpriteRenderer sittingPlayer;
     public Camera cam1;
@@ -28,19 +27,12 @@ public class InterviewQuizManager : MonoBehaviour
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
 
-
-    IEnumerator playSound(float seconds/*, AudioClip sound*/)
-    {
-        yield return new WaitForSeconds(seconds);
-        //AudioSource.PlayClipAtPoint(sound, transform.position);
-    }
     
     //disable blinking of button and revert the colour to white
     IEnumerator revertColor(float seconds, GameObject CAB)
     {
         yield return new WaitForSeconds(seconds);
-        StartCoroutine(playSound(2));
-        //play sound incorrect
+        
 
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
@@ -79,6 +71,13 @@ public class InterviewQuizManager : MonoBehaviour
     {
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertColor(3, correctAnswerButton));
+        // set incorrect text
+        int insultsIndex;
+        string[] insults = {"Try again!", "You're not very good at this"};
+        insultsIndex = Random.Range(0, insults.Length);
+        string incorrectText = insults[insultsIndex];
+        isIncorrect = true;
+        setIncorrectText(incorrectText);
     }
 
 
@@ -88,7 +87,7 @@ public class InterviewQuizManager : MonoBehaviour
         incorrectButton.SetActive(true);
     }
 
-    
+    /*
     public void continueNotContinue(bool toContinue)
     {
         isSelected = false;     //enables to click buttons again
@@ -125,7 +124,7 @@ public class InterviewQuizManager : MonoBehaviour
         {
             enableButtons();
         }   
-    }
+    }*/
 
     //restarts the unpressed button colour to white
     public void changeColour(int i)
@@ -168,8 +167,7 @@ public class InterviewQuizManager : MonoBehaviour
     private void Start()
     {
         generateQuestion();
-        /*
-        cam1.enabled = true;
+        /*cam1.enabled = true;
         cam2.enabled = false;*/
     }
 
@@ -199,8 +197,7 @@ public class InterviewQuizManager : MonoBehaviour
         else 
         {
             questionCanvas.SetActive(false);
-            /*
-            player.GetComponent<PlayerMovement>().enabled = true;
+            /*player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
             cam1.enabled = true;
             cam2.enabled = false;

@@ -12127,7 +12127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &3588223118282446032
 Canvas:
   m_ObjectHideFlags: 0
@@ -14938,10 +14938,9 @@ MonoBehaviour:
   - Question: Are you ready freddy?
     keepCorrectAnswer: 0
     Answers:
-    - Yes
-    - No
+    - ughh no
     - omg yessss
-    CorrectAnswer: 1
+    CorrectAnswer: 2
   options:
   - {fileID: 8140824320924892461}
   - {fileID: 8140824320915401281}
