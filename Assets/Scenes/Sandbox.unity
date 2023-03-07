@@ -12050,6 +12050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - Question: Pick the right answer
+    keepCorrectAnswer: 0
     Answers:
     - Wrong
     - Rong
@@ -12057,6 +12058,7 @@ MonoBehaviour:
     - Rite
     CorrectAnswer: 3
   - Question: Which module is this for?
+    keepCorrectAnswer: 0
     Answers:
     - CS3305
     - CS3306
@@ -12064,6 +12066,7 @@ MonoBehaviour:
     - CS3500
     CorrectAnswer: 1
   - Question: Which module is this?
+    keepCorrectAnswer: 0
     Answers:
     - CS3305
     - CS3300
@@ -12084,7 +12087,6 @@ MonoBehaviour:
   questionCanvas: {fileID: 3588223118282446031}
   audioSource: {fileID: 0}
   player: {fileID: 0}
-  sittingPlayer: {fileID: 0}
   cam1: {fileID: 0}
   cam2: {fileID: 0}
   pressedButtonIndex: -1
@@ -12125,7 +12127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &3588223118282446032
 Canvas:
   m_ObjectHideFlags: 0

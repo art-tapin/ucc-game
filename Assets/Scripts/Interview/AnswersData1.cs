@@ -18,10 +18,12 @@ public class AnswersData1 : MonoBehaviour
         if (isCorrect)
         {
             quizManager.correct();
+            Debug.Log("Correct");
         }
         else
         {
             quizManager.incorrect();
+            Debug.Log("Incorrect");
         }
     }
      
