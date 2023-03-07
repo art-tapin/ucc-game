@@ -18,6 +18,7 @@ public class DayNightCycleURP : MonoBehaviour
     public bool timeLapse;
     public float timeLapseMultiplier = 0.5f;
     public PlayableDirector timeline;
+    public SunMoving sunMoving;
 
 
     // [SerializeField] private Light lighter;
@@ -44,6 +45,7 @@ public class DayNightCycleURP : MonoBehaviour
         }
 
         CalcTime();
+        sunMoving.Move();
     }
 
     public void CalcTime() // Used to calculate sec, min and hours
@@ -51,10 +53,16 @@ public class DayNightCycleURP : MonoBehaviour
         if (timeLapse == false)
         {
             seconds += Time.fixedDeltaTime * tick; // multiply time between fixed update by tick
+            sunMoving.timeUnit = Time.fixedDeltaTime * 2f;//(Time.fixedDeltaTime * tick);// / (100 * 5);
+            sunMoving.hour = 19;
+            sunMoving.hourInUnits = 3600;
         } 
         else
         {
             mins += Time.fixedDeltaTime * tick;
+            sunMoving.timeUnit = Time.fixedDeltaTime * 5f;//(Time.fixedDeltaTime * tick);// / 100;
+            sunMoving.hour = 19;
+            sunMoving.hourInUnits = 60;
         } 
 
         if (seconds >= 60) // 60 sec = 1 min
@@ -85,19 +93,31 @@ public class DayNightCycleURP : MonoBehaviour
         {
             globalLight.intensity = 1 - (getMins() - 20 * 60) * 0.004167f; //const = 1 / hour difference * 60
             //lighter.intensity = 4;
-
+            // sunMoving.Restart();
         }
+
+        if (hours >= 0 && hours <= 5)
+        {
+            sunMoving.Restart();
+        }
+        
         if (hours >= 5 && hours <= 11) // Dawn at 6:00 / 6am    -   until 7:00 / 7am
         {
             globalLight.intensity = (getMins() - 5 * 60) * 0.00277f;
             //lighter.intensity = 0;
         }
+        
 
     }
 
     private float getMins()
     {
         return hours * 60 + mins;
+    }
+
+    private float getSeconds()
+    {
+        return hours * 60 + mins * 60 + seconds;
     }
 
     public void isTimelineDone()
