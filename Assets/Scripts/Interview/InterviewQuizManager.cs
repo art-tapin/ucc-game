@@ -31,6 +31,7 @@ public class InterviewQuizManager : MonoBehaviour
     //disable blinking of button and revert the colour to white
     IEnumerator revertCorrectAnswerColor(float seconds, GameObject CAB)
     {
+        isSelected = false;
         yield return new WaitForSeconds(seconds);
         CAB.GetComponent<Image>().color = Color.white;
         CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
@@ -50,11 +51,16 @@ public class InterviewQuizManager : MonoBehaviour
         TextMeshProUGUI text = options[pressedButtonIndex].GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         enableButtons();    
+        //System.Threading.Thread.Sleep(2000);
+        //remove the question from the list
+        questions.RemoveAt(currentQuestionIndex);
+        generateQuestion();
     }
 
     
     GameObject changeCorrectAnswerColor()
     {
+        
         int q = questions[currentQuestionIndex].CorrectAnswer;
         GameObject correctAnswerButton = options[q-1];
         correctAnswerButton.GetComponent<Image>().color = Color.green;
@@ -71,11 +77,10 @@ public class InterviewQuizManager : MonoBehaviour
     {
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertCorrectAnswerColor(3, correctAnswerButton));
-
         //remove the question from the list
-        questions.RemoveAt(currentQuestionIndex);
-        generateQuestion();
-        // play sound
+        //questions.RemoveAt(currentQuestionIndex);
+        //generateQuestion();
+
     }
 
     
