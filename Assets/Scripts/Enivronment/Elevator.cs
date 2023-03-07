@@ -12,21 +12,24 @@ public class Elevator : Interactable
     public SpriteRenderer sprite;
     private bool isUp;    
 
+    public GameObject platform;
+
     public override void Interact()
     {
         if (isUp)
         {
-            sprite.sprite = up;
+            sprite.sprite = up;            
             Debug.Log("Up");
-            GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = true;
+            platform.GetComponent<WaypointFollowerDungeon>().enabled = true;
             //gameObject.GetComponent<WaypointFollower>().enabled = true;
 
         }
         else
         {
             sprite.sprite = down;
+            sprite.GetComponent<SpriteRenderer>().sprite = down;
             Debug.Log("Down");
-            GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = true;
+            platform.GetComponent<WaypointFollowerDungeon>().enabled = true;
             //gameObject.GetComponent<WaypointFollower>().enabled = false;
         }
         isUp = !isUp;
@@ -36,8 +39,8 @@ public class Elevator : Interactable
     {
         sprite = gameObject.GetComponent<SpriteRenderer>();
         sprite.sprite = down;
-        isUp = false;
-        GameObject.Find("platform").GetComponent<WaypointFollower>().enabled = false;
+        isUp = true;
+        platform.GetComponent<WaypointFollowerDungeon>().enabled = false;
     }
 }
 
