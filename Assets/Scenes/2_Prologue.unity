@@ -7748,6 +7748,7 @@ GameObject:
   - component: {fileID: 616105880}
   - component: {fileID: 616105879}
   - component: {fileID: 616105881}
+  - component: {fileID: 616105882}
   m_Layer: 0
   m_Name: CameraControl
   m_TagString: Untagged
@@ -7804,6 +7805,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 616105879}
   camera: {fileID: 273373803}
+--- !u!114 &616105882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616105878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ca6b6a1797cf1684ab3893afb51cc057, type: 2}
+    - {fileID: 11400000, guid: 6a63aeddca71a5049b35456908e5b049, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 616105881}
+          m_TargetAssemblyTypeName: CameraControlScript, Assembly-CSharp
+          m_MethodName: ZoomSceneTrue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 616105881}
+          m_TargetAssemblyTypeName: CameraControlScript, Assembly-CSharp
+          m_MethodName: ZoomSceneFalse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &629112676
 GameObject:
   m_ObjectHideFlags: 0
@@ -20857,8 +20903,8 @@ PlayableDirector:
     value: {fileID: 1213675074011931849}
   - key: {fileID: 6396834138065472991, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
     value: {fileID: 729840916}
-  - key: {fileID: -3874460909991079482, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
-    value: {fileID: 0}
+  - key: {fileID: 615766343740479239, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
+    value: {fileID: 616105882}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1264680330
