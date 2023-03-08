@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/2_Prologue.unity
     guid: 9cb497e68efb489498a62b0c229bb56b
   - enabled: 1
-    path: Assets/Scenes/3_McDonalds.unity
-    guid: 338c5448e2f47ab43a740ef7ca9f6627
-  - enabled: 1
     path: Assets/Scenes/4_LaptopStore.unity
     guid: 3d95de476a4b0b148bdc34909d142878
+  - enabled: 1
+    path: Assets/Scenes/3_McDonalds.unity
+    guid: 338c5448e2f47ab43a740ef7ca9f6627
   - enabled: 1
     path: Assets/Scenes/5_GameOver.unity
     guid: 6a78400e84516144bb223f03f802c1c2
