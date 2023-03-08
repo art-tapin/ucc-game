@@ -214,7 +214,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Is that your final answer?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &235951725538862901
@@ -349,7 +349,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &235951725600195652
@@ -603,7 +603,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: No
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &235951726561992369
@@ -1154,8 +1154,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
+  m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1305,8 +1305,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
+  m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1570,8 +1570,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
+  m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1830,6 +1830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - Question: Pick the right answer
+    keepCorrectAnswer: 0
     Answers:
     - Wrong
     - Rong
@@ -1837,6 +1838,7 @@ MonoBehaviour:
     - Rite
     CorrectAnswer: 3
   - Question: Which module is this for?
+    keepCorrectAnswer: 0
     Answers:
     - CS3305
     - CS3306
@@ -1844,6 +1846,7 @@ MonoBehaviour:
     - CS3500
     CorrectAnswer: 1
   - Question: Which module is this?
+    keepCorrectAnswer: 0
     Answers:
     - CS3305
     - CS3300
@@ -1862,6 +1865,9 @@ MonoBehaviour:
   confirmingDialogue: {fileID: 235951725600195652}
   incorrectButton: {fileID: 1255690450268988319}
   questionCanvas: {fileID: 3642753706249649646}
+  audioSource: {fileID: 0}
+  player: {fileID: 0}
+  fatherScene: {fileID: 0}
   pressedButtonIndex: -1
   pressedButton: {fileID: 0}
 --- !u!1 &3642753706900439185
@@ -2095,8 +2101,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
+  m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2247,8 +2253,8 @@ MonoBehaviour:
 
     Line 2'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
+  m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
