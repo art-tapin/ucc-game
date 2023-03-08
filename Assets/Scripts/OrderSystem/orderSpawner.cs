@@ -12,16 +12,18 @@ public class orderSpawner : MonoBehaviour
     private BoxCollider2D playerbox;
     public GameObject startBox; 
     private BoxCollider2D startCollider;
+    private PlayerMovement playerMovement;
 
     
-    Vector3 vector3 = new Vector3(1000,430,0); 
+    Vector3 vector3 = new Vector3(1600,800,0); 
     Transform pannelTransform;
     private int count= 0;
     
     public void begin()
     {
+
         new1();
-        Debug.Log("here");
+
     }
     public void end(){
         Debug.Log("end");
@@ -30,10 +32,12 @@ public class orderSpawner : MonoBehaviour
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
         playerbox = player.GetComponent<BoxCollider2D>();
+        playerMovement = player.GetComponent<PlayerMovement>();
         startCollider = startBox.GetComponent<BoxCollider2D>();
         inventory = FindObjectOfType<inventory>();
         GameObject pannel = GameObject.Find("Canvas");
         pannelTransform = pannel.GetComponent<Transform>();
+
 
         
 
@@ -52,8 +56,9 @@ public class orderSpawner : MonoBehaviour
         order temp = order1.GetComponent<order>();
         if (inventory.check(temp.burgers,temp.chips,temp.milkshakes)){
             Destroy(order1);
-            
-            if (count==3){
+            playerMovement.setSpeed(playerMovement.getSpeed()*.9f);
+
+            if (count==10){
                 end();
             }
             else 
