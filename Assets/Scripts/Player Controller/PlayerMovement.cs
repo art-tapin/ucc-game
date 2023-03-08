@@ -119,4 +119,12 @@ public class PlayerMovement : MonoBehaviour
             }            
         }
     }
+    public float getSpeed()
+    {
+        return moveSpeed;
+    }
+    public void setSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 }
