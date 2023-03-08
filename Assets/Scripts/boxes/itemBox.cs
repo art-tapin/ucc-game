@@ -13,7 +13,11 @@ public class itemBox : MonoBehaviour
     private SpriteRenderer sprite;
     private GameObject player;
     private BoxCollider2D playerbox;
-    private BoxCollider2D boxcollider; 
+    private BoxCollider2D boxcollider;
+    public AudioSource emptySound;
+    public AudioSource addSound;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,23 +37,29 @@ public class itemBox : MonoBehaviour
 
         if (boxcollider.IsTouching(playerbox) && open) 
         {
+
             open=false;
             switch (boxType)
             {
                 case "addBurgers":
                     inventory.increaseBurger(1);
+                    addSound.Play();                    
                     break;
                 case "addChips":
                     inventory.increaseChips(1);
+                    addSound.Play();
                     break;
                 case "addMilkshakes":
                     inventory.increaseMilkshake(1);
+                    addSound.Play();
                     break;
                 case "check":
                     orderSpawner.check();
                     break;
                 case "empty":
+                    emptySound.Play();
                     inventory.empty();
+                    
                     break;
             
             }
