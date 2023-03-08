@@ -19,10 +19,17 @@ public class QuizManager : MonoBehaviour
     public GameObject incorrectButton;
     public GameObject questionCanvas;
     public AudioSource audioSource;
+    public SpriteRenderer sittingPlayer;
+    public SpriteRenderer sittingFather;
+    public Animator curtains;
 
     public GameObject player;
 
+    public GameObject lightOrigin;
+
     public Animator fatherScene;
+
+    private bool finished = false;
     //public SpriteRenderer sittingPlayer;
     //public Camera cam1;
     //public Camera cam2;
@@ -221,16 +228,38 @@ public class QuizManager : MonoBehaviour
         if (questions.Count > 0)
         {
             //currentQuestionIndex = Random.Range(0, questions.Count);
+            if (questions.Count == 1)
+            {
+                finished = true;
+            }
             currentQuestionIndex = 0;
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
         }
+
+        //if (questions.Count == 0) {
+          //  finished = true;
+        //}
         else 
         {
             questionCanvas.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
             fatherScene.SetBool("fatherScene", false);
+            
+            if (finished == true)
+            {
+                curtains.GetComponent<Animator>().SetBool("closed", true);
+                sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+                sittingFather.GetComponent<SpriteRenderer>().enabled = false;
+                lightOrigin.GetComponent<LightControl>().turnOnFlag = false;
+                lightOrigin.GetComponent<LightControl>().focuseFlag = false;
+                //cam1.enabled = true;
+                //cam2.enabled = false;
+                //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+                //audioSource.Stop();
+            }
+            //curtains.GetComponent<Animator>().SetBool("closed", true);
             //cam1.enabled = true;
             //cam2.enabled = false;
             //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
