@@ -21251,6 +21251,8 @@ PlayableDirector:
     value: {fileID: 616105882}
   - key: {fileID: -1713693046938321172, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
     value: {fileID: 1651346110}
+  - key: {fileID: -1799005866883093639, guid: 2de67a7936a0c684b830fbecbd6b3dd3, type: 2}
+    value: {fileID: 1651346109}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1264680330
@@ -26991,7 +26993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1651346110
 Animator:
   serializedVersion: 5
@@ -27032,7 +27034,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 37010f07f1069cd4f96e3b191a379e5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
