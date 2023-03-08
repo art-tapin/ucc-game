@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+    //public GameObject test;
+
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
@@ -38,9 +40,12 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E)) {
                 CheckInteraction();
             }
-        
+/*
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                test.SetActive(true);// = true;
+            }
             dirX = Input.GetAxisRaw("Horizontal");
-
+*/
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
             if (Input.GetButtonDown("Jump") && IsGrounded())
