@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        /*if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            SceneManager.LoadScene("");
-        }*/
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
