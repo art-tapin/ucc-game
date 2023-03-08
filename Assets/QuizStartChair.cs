@@ -14,9 +14,12 @@ public class QuizStartChair : Interactable
     public GameObject table;
     public GameObject platform;
     public GameObject curtain;
+    public Animator curtains;
     public GameObject icon;
     public Animator animator;
     public AudioSource audioSource;
+    public GameObject father;
+    public GameObject fatherSitting;
 
     //public Light[] lights;
     public GameObject lightOrigin;
@@ -29,7 +32,8 @@ public class QuizStartChair : Interactable
         Debug.Log("Interacting with QuizStartChair");
         if (isSitting)
         {
-                      
+            father.GetComponent<SpriteRenderer>().enabled = false;
+            fatherSitting.GetComponent<SpriteRenderer>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
             icon.GetComponent<SpriteRenderer>().enabled = false;
@@ -42,7 +46,7 @@ public class QuizStartChair : Interactable
             audioSource.Play();
 
 
-            curtain.GetComponent<Animator>().enabled = true;
+            curtains.GetComponent<Animator>().enabled = true;
 
             table.GetComponent<WaypointFollower>().enabled = true;
             platform.GetComponent<WaypointFollower>().enabled = true;
@@ -75,18 +79,26 @@ public class QuizStartChair : Interactable
 
         }
         else {
-            sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+            
             
             //player.SetActive(false);
             player.GetComponent<SpriteRenderer>().enabled = true;
             player.GetComponent<PlayerMovement>().enabled = true;
             icon.GetComponent<SpriteRenderer>().enabled = true;
+            
 
-            quiz.SetActive(false);
+            
+            //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+            //fatherSitting.GetComponent<SpriteRenderer>().enabled = false;
+            //curtains.SetBool("closed", true);
+            lightOrigin.GetComponent<LightControl>().turnOnFlag = false;
+            lightOrigin.GetComponent<LightControl>().focuseFlag = false;
             //fatherScene.SetBool("fatherScene", false);
             //quizTrigger.GetComponent<QuizTrigger>().enabled = false;
             //quizTrigger.SetActive(true);
             Debug.Log("Not Sitting");
+            quiz.SetActive(false);
+
 
 
 
@@ -99,6 +111,7 @@ public class QuizStartChair : Interactable
     {
         //throw new System.NotImplementedException();
         sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
+        fatherSitting.GetComponent<SpriteRenderer>().enabled = false;
         isSitting = true;
         
         //fatherScene.SetBool("fatherScene", true);
@@ -112,7 +125,7 @@ public class QuizStartChair : Interactable
 
         table.GetComponent<WaypointFollower>().enabled = false;
         platform.GetComponent<WaypointFollower>().enabled = false;
-        curtain.GetComponent<Animator>().enabled = false;
+        curtains.GetComponent<Animator>().enabled = false;
         animator.SetBool("isOpen", false);
 
     }
