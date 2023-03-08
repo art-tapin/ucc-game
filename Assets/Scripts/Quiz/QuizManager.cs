@@ -21,9 +21,11 @@ public class QuizManager : MonoBehaviour
     public AudioSource audioSource;
 
     public GameObject player;
+
+    public Animator fatherScene;
     //public SpriteRenderer sittingPlayer;
-    public Camera cam1;
-    public Camera cam2;
+    //public Camera cam1;
+    //public Camera cam2;
 
     //public Light[] lights;
 
@@ -195,8 +197,8 @@ public class QuizManager : MonoBehaviour
     private void Start()
     {
         generateQuestion();
-        cam1.enabled = true;
-        cam2.enabled = false;
+        //cam1.enabled = true;
+        //cam2.enabled = false;
         //lights.enabled = false;
     }
 
@@ -228,8 +230,9 @@ public class QuizManager : MonoBehaviour
             questionCanvas.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
-            cam1.enabled = true;
-            cam2.enabled = false;
+            fatherScene.SetBool("fatherScene", false);
+            //cam1.enabled = true;
+            //cam2.enabled = false;
             //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
             audioSource.Stop();
         }
