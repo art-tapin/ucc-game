@@ -10,7 +10,7 @@ public class QuizStartChair : Interactable
 
     public GameObject quiz;
     public Camera cam1;
-    public Camera cam2;
+    //public Camera cam2;
     public GameObject table;
     public GameObject platform;
     public GameObject curtain;
@@ -20,6 +20,7 @@ public class QuizStartChair : Interactable
 
     //public Light[] lights;
     public GameObject lightOrigin;
+    public Animator fatherScene;
     
 
     public override void Interact()
@@ -33,9 +34,9 @@ public class QuizStartChair : Interactable
             player.GetComponent<PlayerMovement>().enabled = false;
             icon.GetComponent<SpriteRenderer>().enabled = false;
             sittingPlayer.GetComponent<SpriteRenderer>().enabled = true; 
-
-            cam1.enabled = false;
-            cam2.enabled = true;
+            fatherScene.SetBool("fatherScene", true);
+            //cam1.enabled = false;
+            //cam2.enabled = true;
 
             // invoke fatherscene cinecamera
             audioSource.Play();
@@ -82,10 +83,10 @@ public class QuizStartChair : Interactable
             icon.GetComponent<SpriteRenderer>().enabled = true;
 
             quiz.SetActive(false);
+            //fatherScene.SetBool("fatherScene", false);
             //quizTrigger.GetComponent<QuizTrigger>().enabled = false;
             //quizTrigger.SetActive(true);
             Debug.Log("Not Sitting");
-
 
 
 
@@ -100,11 +101,12 @@ public class QuizStartChair : Interactable
         sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
         isSitting = true;
         
+        //fatherScene.SetBool("fatherScene", true);
         //quiz.SetActive(false);
         //quizTrigger.GetComponent<QuizTrigger>().enabled = false;
         //quizTrigger.SetActive(true);
-        cam1.enabled = true;
-        cam2.enabled = false;
+        //cam1.enabled = true;
+        //cam2.enabled = false;
        //cam2.Camera.SetActive(false);
        
 
