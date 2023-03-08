@@ -100,7 +100,6 @@ public class DayNightCycleURP : MonoBehaviour
             moonLight2D.intensity = (getMins() - 20 * 60) * 0.004167f;
             moonRenderer.color = new Color(1, 1, 1, (getMins() - 20 * 60) * 0.004167f);
             
-            
             //lighter.intensity = 4;
             // sunMoving.Restart();
         }
@@ -121,7 +120,6 @@ public class DayNightCycleURP : MonoBehaviour
                 moonLight2D.intensity = 1 - (getMins() - 5 * 60) * 0.0055f;
                 moonRenderer.color = new Color(1, 1, 1, 1 - (getMins() - 5 * 60) * 0.0055f);
             }
-            
         }
         
 
@@ -139,7 +137,7 @@ public class DayNightCycleURP : MonoBehaviour
 
     public void isTimelineDone()
     {
-         if (timeline.state != PlayState.Playing)
+        if (timeline.state != PlayState.Playing)
         {
             timeLapse = false;
         }
