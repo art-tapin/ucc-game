@@ -48,7 +48,7 @@ public class ParallaxController : MonoBehaviour
             
         for (int i = 0; i < backCount; i++)
         {
-            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
+            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / (farthestBack * 1.3f);
         }     
     }
 
