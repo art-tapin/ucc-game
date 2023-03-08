@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 435647170}
   - component: {fileID: 435647172}
+  - component: {fileID: 435647173}
   - component: {fileID: 435647171}
   m_Layer: 5
   m_Name: GenderText
@@ -158,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -69.1, y: 9.667}
-  m_SizeDelta: {x: -213.9971, y: -193.858}
+  m_AnchoredPosition: {x: 0, y: 52.923573}
+  m_SizeDelta: {x: -125.2721, y: -189.4109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435647171
 MonoBehaviour:
@@ -181,9 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GENDER
-
-'
+  m_text: "CHARACTER \nSELECTION\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
@@ -210,19 +209,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 19.54
+  m_fontSizeBase: 19.54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 14.98
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -246,7 +245,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.7036667, y: -0.48035905, z: -0.28220364, w: 0}
+  m_margin: {x: 0.7036667, y: 0.41074947, z: -0.28220364, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -260,6 +259,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435647169}
   m_CullTransparentMesh: 1
+--- !u!114 &435647173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435647169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a294d6f42913b7478f1e36c00a7453f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkFadeInTime: 0.001
+  blinkFadeOutTime: 0.001
+  blinkDuration: 0.005
 --- !u!1 &456669593
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +285,7 @@ GameObject:
   - component: {fileID: 456669594}
   - component: {fileID: 456669596}
   - component: {fileID: 456669595}
+  - component: {fileID: 456669597}
   m_Layer: 5
   m_Name: TitleBarTop
   m_TagString: Untagged
@@ -395,6 +410,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456669593}
   m_CullTransparentMesh: 1
+--- !u!114 &456669597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456669593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a294d6f42913b7478f1e36c00a7453f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkFadeInTime: 0.001
+  blinkFadeOutTime: 0.001
+  blinkDuration: 0.005
 --- !u!1 &461211263
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +592,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MALE
+  m_text: BOY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
@@ -776,7 +806,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732640982}
-  - component: {fileID: 732640985}
   - component: {fileID: 732640984}
   - component: {fileID: 732640983}
   - component: {fileID: 732640986}
@@ -904,21 +933,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732640981}
   m_CullTransparentMesh: 1
---- !u!114 &732640985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732640981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a294d6f42913b7478f1e36c00a7453f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blinkFadeInTime: 0.001
-  blinkFadeOutTime: 0.001
-  blinkDuration: 0.005
 --- !u!114 &732640986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,9 +945,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a294d6f42913b7478f1e36c00a7453f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blinkFadeInTime: 0.001
-  blinkFadeOutTime: 0.001
-  blinkDuration: 0.005
+  blinkFadeInTime: 0.5
+  blinkFadeOutTime: 0.6
+  blinkDuration: 0.7
 --- !u!1 &783090215
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +961,7 @@ GameObject:
   - component: {fileID: 783090218}
   - component: {fileID: 783090217}
   m_Layer: 5
-  m_Name: ContinueButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -43.2}
+  m_AnchoredPosition: {x: -0.000012875, y: -53.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783090217
@@ -995,7 +1009,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.70980394, g: 0.70980394, b: 0.70980394, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1018,8 +1032,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1690524375}
-        m_TargetAssemblyTypeName: levelLoader, Assembly-CSharp
+      - m_Target: {fileID: 1690524377}
+        m_TargetAssemblyTypeName: levelLoaderGender, Assembly-CSharp
         m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
@@ -1476,6 +1490,7 @@ GameObject:
   - component: {fileID: 1298247115}
   - component: {fileID: 1298247117}
   - component: {fileID: 1298247116}
+  - component: {fileID: 1298247118}
   m_Layer: 5
   m_Name: TitleBarBottom
   m_TagString: Untagged
@@ -1600,6 +1615,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298247114}
   m_CullTransparentMesh: 1
+--- !u!114 &1298247118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298247114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a294d6f42913b7478f1e36c00a7453f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkFadeInTime: 0.001
+  blinkFadeOutTime: 0.001
+  blinkDuration: 0.005
 --- !u!1 &1442560852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,19 +2139,33 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8554349735091854431, guid: a8a0db4b643857141865849e92473973, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8a0db4b643857141865849e92473973, type: 3}
---- !u!114 &1690524375 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8554349735091854431, guid: a8a0db4b643857141865849e92473973, type: 3}
+--- !u!1 &1690524375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8554349735091854429, guid: a8a0db4b643857141865849e92473973, type: 3}
   m_PrefabInstance: {fileID: 1690524374}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!95 &1690524376 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8554349734787437828, guid: a8a0db4b643857141865849e92473973, type: 3}
+  m_PrefabInstance: {fileID: 1690524374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690524377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690524375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35446603956e72c448d2beb44060cd61, type: 3}
+  m_Script: {fileID: 11500000, guid: 92956ec41e53b0f4aa5d2584a743cdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 1690524376}
+  transitionTime: 1
 --- !u!1 &1751187424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.7, y: 9.667}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 9.667}
   m_SizeDelta: {x: 143.2785, y: 19.334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850625803
@@ -2474,16 +2518,16 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: MALE
+    - m_Text: BOY
       m_Image: {fileID: 0}
-    - m_Text: FEMALE
+    - m_Text: GIRL
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442560857}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetQuality
+      - m_Target: {fileID: 1690524377}
+        m_TargetAssemblyTypeName: levelLoaderGender, Assembly-CSharp
+        m_MethodName: SetGender
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
