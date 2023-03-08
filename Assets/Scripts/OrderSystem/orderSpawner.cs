@@ -13,6 +13,8 @@ public class orderSpawner : MonoBehaviour
     public GameObject startBox; 
     private BoxCollider2D startCollider;
     private PlayerMovement playerMovement;
+    public AudioSource correctSound;
+    public AudioSource wrongSound;
 
     
     Vector3 vector3 = new Vector3(1600,800,0); 
@@ -57,6 +59,7 @@ public class orderSpawner : MonoBehaviour
         if (inventory.check(temp.burgers,temp.chips,temp.milkshakes)){
             Destroy(order1);
             playerMovement.setSpeed(playerMovement.getSpeed()*.9f);
+            correctSound.Play();
 
             if (count==10){
                 end();
@@ -64,9 +67,12 @@ public class orderSpawner : MonoBehaviour
             else 
             {
             new1() ;
-            bin();
+            bin();            
             count++;
-            }
+            }        
+        }
+        else {
+            wrongSound.Play();
         }
     }
     void Update()
