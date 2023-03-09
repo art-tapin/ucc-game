@@ -17,6 +17,10 @@ public class InterviewQuizManager : MonoBehaviour
     private TextMeshProUGUI selected;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
+
+    public Animator bowserAnim;
+    public GameObject player;
+    public GameObject bowser;
     /*public AudioSource audioSource;
 
     public GameObject player;
@@ -216,6 +220,8 @@ public class InterviewQuizManager : MonoBehaviour
         else 
         {
             questionCanvas.SetActive(false);
+            player.GetComponent<PlayerMovement>().enabled = true;
+            
             /*player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
             cam1.enabled = true;

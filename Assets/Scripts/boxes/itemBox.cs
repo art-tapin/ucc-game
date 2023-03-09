@@ -2,63 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class itemBox : MonoBehaviour
+public class ItemBox : MonoBehaviour
 { 
     private bool open = true;
 
     public string boxType;
-    private orderSpawner orderSpawner;
-    private inventory inventory;
+    private OrderSpawner orderSpawner;
+    private Inventory inventory;
     private SpriteRenderer sprite;
     private GameObject player;
     private BoxCollider2D playerbox;
     private BoxCollider2D boxcollider;
     public AudioSource emptySound;
     public AudioSource addSound;
-
-    
-
     // Start is called before the first frame update
     void Start()
     {
         
-        orderSpawner = FindObjectOfType<orderSpawner>();
-        inventory= FindObjectOfType<inventory>();
+        orderSpawner = FindObjectOfType<OrderSpawner>();
+        inventory= FindObjectOfType<Inventory>();
         boxcollider = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerbox = player.GetComponent<BoxCollider2D>();
         
+        //box.GetComponent<ShakeObject>().enabled = false;
+        //originalPosition = transform.localPosition;
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
+        
         if (boxcollider.IsTouching(playerbox) && open) 
         {
-
+            
             open=false;
             switch (boxType)
             {
                 case "addBurgers":
-                    inventory.increaseBurger(1);
-                    addSound.Play();                    
+                    inventory.increaseBurger(1);                                   
+                    addSound.Play();                      
                     break;
                 case "addChips":
-                    inventory.increaseChips(1);
-                    addSound.Play();
+                    inventory.increaseChips(1);                    
+                    addSound.Play();                    
                     break;
                 case "addMilkshakes":
-                    inventory.increaseMilkshake(1);
-                    addSound.Play();
+                    inventory.increaseMilkshake(1);                    
+                    addSound.Play();                    
                     break;
-                case "check":
-                    orderSpawner.check();
+                case "check":                    
+                    orderSpawner.check();                    
                     break;
                 case "empty":
                     emptySound.Play();
-                    inventory.empty();
+                    inventory.empty();                 
                     
                     break;
             
@@ -68,5 +68,9 @@ public class itemBox : MonoBehaviour
             open = true;
 
         }
-    } 
+    }
+
+
+   
 }
+

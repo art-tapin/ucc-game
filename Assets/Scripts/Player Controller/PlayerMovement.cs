@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 flashLightUnFlipped = new Vector3(0.16f, 0.67f, 0f);
     private Vector3 flashLightFlipped = new Vector3(-0.16f, 0.67f, 0f);
 
+    //public GameObject test;
+
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
@@ -41,7 +43,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E)) {
                 CheckInteraction();
             }
-        
+/*
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                test.SetActive(true);// = true;
+            }
+            */
             dirX = Input.GetAxisRaw("Horizontal");
 
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
