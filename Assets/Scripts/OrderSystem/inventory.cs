@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 { 
     public TMP_Text burgersText;
     public TMP_Text chipsText;

@@ -7,29 +7,24 @@ public class itemBox : MonoBehaviour
     private bool open = true;
 
     public string boxType;
-    private orderSpawner orderSpawner;
-    private inventory inventory;
+    private OrderSpawner orderSpawner;
+    private Inventory inventory;
     private SpriteRenderer sprite;
     private GameObject player;
     private BoxCollider2D playerbox;
     private BoxCollider2D boxcollider;
     public AudioSource emptySound;
     public AudioSource addSound;
-    //public GameObject box;
-
-
-
-    
-
     // Start is called before the first frame update
     void Start()
     {
         
-        orderSpawner = FindObjectOfType<orderSpawner>();
-        inventory= FindObjectOfType<inventory>();
+        orderSpawner = FindObjectOfType<OrderSpawner>();
+        inventory= FindObjectOfType<Inventory>();
         boxcollider = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerbox = player.GetComponent<BoxCollider2D>();
+        
         //box.GetComponent<ShakeObject>().enabled = false;
         //originalPosition = transform.localPosition;
         
@@ -58,7 +53,7 @@ public class itemBox : MonoBehaviour
                     inventory.increaseMilkshake(1);                    
                     addSound.Play();                    
                     break;
-                case "check":
+                case "check":                    
                     orderSpawner.check();                    
                     break;
                 case "empty":

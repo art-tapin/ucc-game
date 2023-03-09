@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class orderSpawner : MonoBehaviour
+public class OrderSpawner : MonoBehaviour
 {
     private bool notStarted = true;
-    inventory inventory;
+    Inventory inventory;
     public GameObject order;
     private GameObject order1;
     private GameObject player;
@@ -36,7 +36,7 @@ public class orderSpawner : MonoBehaviour
         playerbox = player.GetComponent<BoxCollider2D>();
         playerMovement = player.GetComponent<PlayerMovement>();
         startCollider = startBox.GetComponent<BoxCollider2D>();
-        inventory = FindObjectOfType<inventory>();
+        inventory = FindObjectOfType<Inventory>();
         GameObject pannel = GameObject.Find("Canvas");
         pannelTransform = pannel.GetComponent<Transform>();
 
@@ -54,27 +54,30 @@ public class orderSpawner : MonoBehaviour
     public void bin(){
         inventory.empty();
     }
-    public void check(){
-        order temp = order1.GetComponent<order>();
-        if (inventory.check(temp.burgers,temp.chips,temp.milkshakes)){
-            Destroy(order1);
-            playerMovement.setSpeed(playerMovement.getSpeed()*.9f);
-            correctSound.Play();
+    public bool check()
+{
+    Order temp = order1.GetComponent<Order>();
+    if (inventory.check(temp.burgers,temp.chips,temp.milkshakes)){
+        Destroy(order1);
+        playerMovement.setSpeed(playerMovement.getSpeed()*.9f);
+        correctSound.Play();
 
-            if (count==10){
-                end();
-            }
-            else 
-            {
-            new1() ;
-            bin();            
+        if (count==10){
+            end();
+        }
+        else 
+        {
+            new1();
+            bin();
             count++;
-            }        
         }
-        else {
-            wrongSound.Play();
-        }
+        return true;
     }
+    else {
+        wrongSound.Play();
+        return false;
+    }
+}
     void Update()
     {
         if (notStarted && startCollider.IsTouching(playerbox))
