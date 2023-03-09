@@ -15,6 +15,8 @@ public class OrderSpawner : MonoBehaviour
     private PlayerMovement playerMovement;
     public AudioSource correctSound;
     public AudioSource wrongSound;
+    public GameObject playerInventory;
+    //public AudioSource endMusic;
 
     
     Vector3 vector3 = new Vector3(1300,800,0); 
@@ -25,10 +27,21 @@ public class OrderSpawner : MonoBehaviour
     {
 
         new1();
+        playerInventory.SetActive(true);
+        inventory = FindObjectOfType<Inventory>();
 
     }
     public void end(){
         Debug.Log("end");
+        playerInventory.SetActive(false);
+        //endMusic.Play();
+        // start end music
+        // goomba anims
+        // display dialgoeu box
+        // bowser anims
+        // scene change
+        // 
+
         //do collapes
     }
     void Start(){
@@ -36,9 +49,11 @@ public class OrderSpawner : MonoBehaviour
         playerbox = player.GetComponent<BoxCollider2D>();
         playerMovement = player.GetComponent<PlayerMovement>();
         startCollider = startBox.GetComponent<BoxCollider2D>();
-        inventory = FindObjectOfType<Inventory>();
+        
         GameObject pannel = GameObject.Find("Canvas");
         pannelTransform = pannel.GetComponent<Transform>();
+
+
 
 
         
@@ -46,8 +61,8 @@ public class OrderSpawner : MonoBehaviour
     }
     public void new1(){
         order1 = Instantiate(order,pannelTransform);
-        order1.transform.position = vector3;
-        order1.transform.localScale = new Vector3(1f,1f,0);
+        //order1.transform.position = vector3;
+        //order1.transform.localScale = new Vector3(1f,1f,0);
     }
 
 
@@ -70,6 +85,7 @@ public class OrderSpawner : MonoBehaviour
             new1();
             bin();
             count++;
+            
         }
         return true;
     }
