@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
+    public GameObject flashLight;
+    private Vector3 flashLightUnFlipped = new Vector3(0.16f, 0.67f, 0f);
+    private Vector3 flashLightFlipped = new Vector3(-0.16f, 0.67f, 0f);
 
     //public GameObject test;
 
@@ -72,11 +75,17 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.running;
             sprite.flipX = false;
+            
+            flashLight.transform.localPosition = flashLightUnFlipped;
+            flashLight.transform.localEulerAngles = new Vector3(0, 0, 270);
         }
         else if (dirX < 0f && DialogueManager.isActive == false)
         {
             state = MovementState.running;
             sprite.flipX = true;
+            
+            flashLight.transform.localPosition = flashLightFlipped;
+            flashLight.transform.localEulerAngles = new Vector3(0, 0, 90);
         }
         else
         {
