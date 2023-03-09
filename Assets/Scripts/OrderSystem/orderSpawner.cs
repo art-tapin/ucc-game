@@ -17,7 +17,7 @@ public class OrderSpawner : MonoBehaviour
     public AudioSource wrongSound;
 
     
-    Vector3 vector3 = new Vector3(1600,800,0); 
+    Vector3 vector3 = new Vector3(1300,800,0); 
     Transform pannelTransform;
     private int count= 0;
     
