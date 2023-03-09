@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class itemBox : MonoBehaviour
+public class ItemBox : MonoBehaviour
 { 
     private bool open = true;
 
