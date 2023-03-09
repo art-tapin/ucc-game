@@ -370,7 +370,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -455,7 +455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.0000916, y: -0.000061035156}
+  m_AnchoredPosition: {x: -5.5357666, y: 0}
   m_SizeDelta: {x: -11.071594, y: -0.000022888184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8951943424899525461
@@ -985,8 +985,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 1.6798096, y: 118}
-  m_SizeDelta: {x: 0, y: 165.266}
+  m_AnchoredPosition: {x: 42.00006, y: 318.6388}
+  m_SizeDelta: {x: 355.5452, y: 259.0565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8951943425327002593
 MonoBehaviour:
@@ -1054,8 +1054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6798096, y: -352.90292}
-  m_SizeDelta: {x: -19.928467, y: 110.7633}
+  m_AnchoredPosition: {x: 42, y: -79}
+  m_SizeDelta: {x: 328.5313, y: 173.6228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8951943425391998355
 CanvasRenderer:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1426,6 +1426,9 @@ MonoBehaviour:
   incorrectText: {fileID: 6907118714552252836}
   incorrectButton: {fileID: 6907118714476266677}
   questionCanvas: {fileID: 8951943425810422468}
+  bowserAnim: {fileID: 0}
+  player: {fileID: 0}
+  bowser: {fileID: 0}
   pressedButtonIndex: -1
   pressedButton: {fileID: 0}
 --- !u!1 &8951943426568300295
