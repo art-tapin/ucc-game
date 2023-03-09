@@ -8,7 +8,7 @@ public class ItemBox : MonoBehaviour
 
     public string boxType;
     private OrderSpawner orderSpawner;
-    private Inventory inventory;
+    public Inventory inventory;
     private SpriteRenderer sprite;
     private GameObject player;
     private BoxCollider2D playerbox;
@@ -20,7 +20,7 @@ public class ItemBox : MonoBehaviour
     {
         
         orderSpawner = FindObjectOfType<OrderSpawner>();
-        inventory= FindObjectOfType<Inventory>();
+        //inventory= FindObjectOfType<Inventory>();
         boxcollider = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerbox = player.GetComponent<BoxCollider2D>();
