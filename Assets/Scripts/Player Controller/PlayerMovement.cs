@@ -44,8 +44,9 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 test.SetActive(true);// = true;
             }
+            */
             dirX = Input.GetAxisRaw("Horizontal");
-*/
+
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
             if (Input.GetButtonDown("Jump") && IsGrounded())
