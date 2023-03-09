@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f0e7b6f8432e904691448830a321b73
+guid: 9ffb223f9b538f14c99bcd8f091d53ad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bowser_boss_idle_0
+      name: Mr_Robotnik_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 72
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753ace44ab1a1f54fb2c56fa2ca63481
-      internalID: 167401848
+      spriteID: 4728aec6f44895346983d45cd248adf4
+      internalID: -801216312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_1
+      name: Mr_Robotnik_idle_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 72
         y: 0
-        width: 32
-        height: 32
+        width: 72
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cf7623928afd2542a122f46ad6310a7
-      internalID: -710710385
+      spriteID: 728b3603cb978324d96bc122b83ac151
+      internalID: 1565375429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_2
+      name: Mr_Robotnik_idle_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 144
         y: 0
-        width: 32
-        height: 32
+        width: 72
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be93dd1e34aeb943b2dcdc209150454
-      internalID: -660048096
+      spriteID: 887df2482368d5d43bde5c7684c16eae
+      internalID: -296707611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_3
+      name: Mr_Robotnik_idle_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 216
         y: 0
-        width: 32
-        height: 32
+        width: 72
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc056c0affa855499c0a2ce10f5c103
-      internalID: -872137587
+      spriteID: b91ea096a261bb849865dd553e54c507
+      internalID: -1544720517
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bowser_boss_idle_3: -872137587
-      Bowser_boss_idle_2: -660048096
-      Bowser_boss_idle_0: 167401848
-      Bowser_boss_idle_1: -710710385
+      Mr_Robotnik_idle_2: -296707611
+      Mr_Robotnik_idle_0: -801216312
+      Mr_Robotnik_idle_3: -1544720517
+      Mr_Robotnik_idle_1: 1565375429
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random; 
 using TMPro;
-public class order : MonoBehaviour
+public class Order : MonoBehaviour
 {
     public TMP_Text burgersText;
     public TMP_Text chipsText;

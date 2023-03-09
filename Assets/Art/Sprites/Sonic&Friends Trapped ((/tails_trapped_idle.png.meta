@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f0e7b6f8432e904691448830a321b73
+guid: c300e99ae528ae249b6e541b17b92008
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bowser_boss_idle_0
+      name: tails_trapped_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 34
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753ace44ab1a1f54fb2c56fa2ca63481
-      internalID: 167401848
+      spriteID: 5b51fe7b38cd0454184298770a78e53c
+      internalID: 84960431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_1
+      name: tails_trapped_idle_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
-        width: 32
-        height: 32
+        width: 34
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cf7623928afd2542a122f46ad6310a7
-      internalID: -710710385
+      spriteID: 4441bfea4459352429434a406e653738
+      internalID: -670733668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_2
+      name: tails_trapped_idle_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 68
         y: 0
-        width: 32
-        height: 32
+        width: 34
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be93dd1e34aeb943b2dcdc209150454
-      internalID: -660048096
+      spriteID: 4094cba59772e5b4e8c0aa3f3bd0f297
+      internalID: -1614609272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_3
+      name: tails_trapped_idle_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 102
         y: 0
-        width: 32
-        height: 32
+        width: 34
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc056c0affa855499c0a2ce10f5c103
-      internalID: -872137587
+      spriteID: 73288e40afb3c6d458f533e7e54be5d7
+      internalID: -1528020538
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bowser_boss_idle_3: -872137587
-      Bowser_boss_idle_2: -660048096
-      Bowser_boss_idle_0: 167401848
-      Bowser_boss_idle_1: -710710385
+      tails_trapped_idle_0: 84960431
+      tails_trapped_idle_2: -1614609272
+      tails_trapped_idle_1: -670733668
+      tails_trapped_idle_3: -1528020538
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

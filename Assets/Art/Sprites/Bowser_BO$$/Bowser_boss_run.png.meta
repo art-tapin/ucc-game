@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beb67c2ddefa9164e8c3d741f78e0842
-      internalID: 634754171
+      spriteID: 8769c00f8751a8e4db529e2b66c5abe9
+      internalID: 1388106847
       vertices: []
       indices: 
       edges: []
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6808ae097c47584a9c960ec4c62d469
-      internalID: -675906875
+      spriteID: 4ca3df57a8889a24e9ffafc2cfc3201e
+      internalID: -419641500
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bowser_boss_run_0: 634754171
-      Bowser_boss_run_1: -675906875
+      Bowser_boss_run_0: 1388106847
+      Bowser_boss_run_1: -419641500
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

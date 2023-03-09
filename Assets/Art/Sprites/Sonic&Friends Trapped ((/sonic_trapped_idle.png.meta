@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f0e7b6f8432e904691448830a321b73
+guid: edfded402a0c2d644b85316fd2023f6d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bowser_boss_idle_0
+      name: sonic_trapped_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 36
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753ace44ab1a1f54fb2c56fa2ca63481
-      internalID: 167401848
+      spriteID: 30eec8937a730704d8e3909f4af84ec5
+      internalID: -649172467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_1
+      name: sonic_trapped_idle_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 36
         y: 0
-        width: 32
-        height: 32
+        width: 36
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cf7623928afd2542a122f46ad6310a7
-      internalID: -710710385
+      spriteID: 0a0dc84e67f97d446889bd3980a5cfcc
+      internalID: -1332966160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_2
+      name: sonic_trapped_idle_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 72
         y: 0
-        width: 32
-        height: 32
+        width: 36
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be93dd1e34aeb943b2dcdc209150454
-      internalID: -660048096
+      spriteID: 90ead7fea27105c4eaa970f59b93f250
+      internalID: -859044512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bowser_boss_idle_3
+      name: sonic_trapped_idle_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 108
         y: 0
-        width: 32
-        height: 32
+        width: 36
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc056c0affa855499c0a2ce10f5c103
-      internalID: -872137587
+      spriteID: 4e1603aa06108564f9a9cb12c86fadae
+      internalID: 1344681651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fb806e7048f5140b1a3aa1681218de
+      internalID: 1968205046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1514c5c7740351340a0f1c1143bd5dfd
+      internalID: 1830691646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14e69384abd8c54c8461d0cd4e46f32
+      internalID: -2065333517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_7
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9807aee5f2a76fe449d68ed371037195
+      internalID: -2043919015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85a0fb6eabde3e479808f627de7da22
+      internalID: -1328620748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_9
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcab19522462a6241ad22a632701aae1
+      internalID: 191529796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonic_trapped_idle_10
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7750de28b5c9111459e16fc72ab70e3a
+      internalID: 810261347
       vertices: []
       indices: 
       edges: []
@@ -223,10 +370,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bowser_boss_idle_3: -872137587
-      Bowser_boss_idle_2: -660048096
-      Bowser_boss_idle_0: 167401848
-      Bowser_boss_idle_1: -710710385
+      sonic_trapped_idle_0: -649172467
+      sonic_trapped_idle_2: -859044512
+      sonic_trapped_idle_6: -2065333517
+      sonic_trapped_idle_5: 1830691646
+      sonic_trapped_idle_7: -2043919015
+      sonic_trapped_idle_3: 1344681651
+      sonic_trapped_idle_4: 1968205046
+      sonic_trapped_idle_9: 191529796
+      sonic_trapped_idle_1: -1332966160
+      sonic_trapped_idle_10: 810261347
+      sonic_trapped_idle_8: -1328620748
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
