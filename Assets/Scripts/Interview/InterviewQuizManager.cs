@@ -16,17 +16,11 @@ public class InterviewQuizManager : MonoBehaviour
     public TextMeshProUGUI incorrectText;
     private TextMeshProUGUI selected;
     public GameObject incorrectButton;
-    public GameObject questionCanvas;
+    public GameObject interviewCanvas;
 
     public Animator bowserAnim;
     public GameObject player;
     public GameObject bowser;
-    /*public AudioSource audioSource;
-
-    public GameObject player;
-    public SpriteRenderer sittingPlayer;
-    public Camera cam1;
-    public Camera cam2;*/
 
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
@@ -78,14 +72,12 @@ public class InterviewQuizManager : MonoBehaviour
     {
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertCorrectAnswerColor(3, correctAnswerButton));
+        pressedButtonIndex = -1;
     }
 
     
     public void incorrect()
     {
-        //GameObject correctAnswerButton = changeCorrectAnswerColor();
-        //StartCoroutine(revertCorrectAnswerColor(3, correctAnswerButton));
-
         // set incorrect text
         int insultsIndex;
         string[] insults = {"Try again!", "You're not very good at this"};
@@ -104,45 +96,6 @@ public class InterviewQuizManager : MonoBehaviour
         incorrectText.text = text;
         incorrectButton.SetActive(true);
     }
-
-    /*
-    public void continueNotContinue(bool toContinue)
-    {
-        isSelected = false;     //enables to click buttons again
-        changeColour(-1);
-        // Play sound here        
-        if (toContinue)
-        {
-            System.Threading.Thread.Sleep(2000);
-            //change the correct answer to different index
-            if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1 &&
-                questions[currentQuestionIndex].keepCorrectAnswer == false)
-
-            {
-                switch (pressedButtonIndex)
-                {
-                    case 0:
-                        questions[currentQuestionIndex].CorrectAnswer = 2;
-                        break;
-                    case 1:
-                        questions[currentQuestionIndex].CorrectAnswer = 3;
-                        break;
-                    case 2:
-                        questions[currentQuestionIndex].CorrectAnswer = 4;
-                        break;
-                    case 3:
-                        questions[currentQuestionIndex].CorrectAnswer = 1;
-                        break;
-                }
-                options[pressedButtonIndex].GetComponent<AnswersData1>().isCorrect = false;
-            }
-            incorrect();
-        }
-        else
-        {
-            enableButtons();
-        }   
-    }*/
 
     //restarts the unpressed button colour to white
     public void changeColour(int i)
@@ -190,8 +143,6 @@ public class InterviewQuizManager : MonoBehaviour
     private void Start()
     {
         generateQuestion();
-        /*cam1.enabled = true;
-        cam2.enabled = false;*/
     }
 
     void SetAnswers()
@@ -212,22 +163,15 @@ public class InterviewQuizManager : MonoBehaviour
     {
         if (questions.Count > 0)
         {
-            //currentQuestionIndex = Random.Range(0, questions.Count);
             currentQuestionIndex = 0;
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
         }
         else 
         {
-            questionCanvas.SetActive(false);
+            interviewCanvas.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
-            
-            /*player.GetComponent<PlayerMovement>().enabled = true;
-            player.GetComponent<SpriteRenderer>().enabled = true;
-            cam1.enabled = true;
-            cam2.enabled = false;
-            sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-            audioSource.Stop();*/
+            Destroy(interviewCanvas);
         }
     }
 }
