@@ -1425,7 +1425,7 @@ MonoBehaviour:
   QuestionText: {fileID: 8951943424899525460}
   incorrectText: {fileID: 6907118714552252836}
   incorrectButton: {fileID: 6907118714476266677}
-  questionCanvas: {fileID: 8951943425810422468}
+  interviewCanvas: {fileID: 8951943425810422468}
   bowserAnim: {fileID: 0}
   player: {fileID: 0}
   bowser: {fileID: 0}
