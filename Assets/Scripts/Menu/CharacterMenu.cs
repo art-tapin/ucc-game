@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class levelLoaderGender : MonoBehaviour
+public class CharacterMenu : MonoBehaviour
 {
-    public Animator transition;
-    public float transitionTime = 2f;
+    [SerializeField] private GameObject startingAnimation;
+    [SerializeField] private GameObject endingAnimation;
     private int buildIndexConstant = 1;
+    public float transitionTime = 2f;
+
+    
+    void Start()
+    {
+        startingAnimation.SetActive(true);
+        //endingAnimation.SetActive(false);
+    }
 
     public void SetGender (int qualityIndex)
     {
@@ -17,7 +24,12 @@ public class levelLoaderGender : MonoBehaviour
             buildIndexConstant = 2;
         }
     }
-    
+
+    public void PlayGame()
+    {
+        endingAnimation.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     public void LoadNextLevel()
     {
@@ -27,7 +39,7 @@ public class levelLoaderGender : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         //Play animation
-        transition.SetTrigger("Start");
+        endingAnimation.SetActive(true);
         Debug.Log("Transitioning to next level");
         //Wait
         yield return new WaitForSeconds(transitionTime);
