@@ -16,6 +16,8 @@ public class OrderSpawner : MonoBehaviour
     public AudioSource correctSound;
     public AudioSource wrongSound;
     public GameObject playerInventory;
+    public GameObject endDialogue;
+    public GameObject enemies;
     //public AudioSource endMusic;
 
     
@@ -35,9 +37,13 @@ public class OrderSpawner : MonoBehaviour
         Debug.Log("end");
         playerInventory.SetActive(false);
         //endMusic.Play();
-        // start end music
-        // goomba anims
+        endDialogue.SetActive(true);
+        enemies.SetActive(true);
+        player.GetComponent<PlayerMovement>().enabled = false;
+
+        // start end musicGa
         // display dialgoeu box
+
         // bowser anims
         // scene change
         // 
@@ -52,10 +58,8 @@ public class OrderSpawner : MonoBehaviour
         
         GameObject pannel = GameObject.Find("Canvas");
         pannelTransform = pannel.GetComponent<Transform>();
-
-
-
-
+        endDialogue.SetActive(false);
+        enemies.SetActive(false);
         
 
     }
@@ -74,10 +78,10 @@ public class OrderSpawner : MonoBehaviour
     Order temp = order1.GetComponent<Order>();
     if (inventory.check(temp.burgers,temp.chips,temp.milkshakes)){
         Destroy(order1);
-        playerMovement.setSpeed(playerMovement.getSpeed()*.9f);
+        playerMovement.setSpeed(playerMovement.getSpeed()*.75f);
         correctSound.Play();
 
-        if (count==10){
+        if (count==1){
             end();
         }
         else 
