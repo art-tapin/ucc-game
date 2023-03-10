@@ -10,8 +10,9 @@ public class Enemy : MonoBehaviour
     public Transform Player;
     private SpriteRenderer sprite;
     public float oldPosition;
-    public bool movingRight = false;
-    public bool movingLeft = false;
+    public Animator anim;
+    //public bool movingRight = false;
+    //public bool movingLeft = false;
 
     // Use this for initialization
     void Start()
@@ -33,14 +34,14 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(Player.position, transform.position) > 1.0f)
         {
             transform.position += (displacement * speed * Time.deltaTime);
+            anim.SetBool("isWalking", true);
         }
-
+/*
         if (transform.position.x > oldPosition)
         {
             movingRight = true;
             movingLeft = false;
-            sprite.flipX = false;
-            
+            sprite.flipX = false;            
             
         }
         if (transform.position.x < oldPosition)
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
             sprite.flipX = true;
             
         }
+        */
 
     }
 
