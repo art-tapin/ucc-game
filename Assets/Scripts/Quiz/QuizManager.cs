@@ -251,7 +251,7 @@ public class QuizManager : MonoBehaviour
             {
                 curtains.GetComponent<Animator>().SetBool("closed", true);
                 sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-                sittingFather.GetComponent<SpriteRenderer>().enabled = false;
+                //sittingFather.GetComponent<SpriteRenderer>().enabled = false;
                 lightOrigin.GetComponent<LightControl>().turnOnFlag = false;
                 lightOrigin.GetComponent<LightControl>().focuseFlag = false;
                 //cam1.enabled = true;

@@ -89,7 +89,7 @@ public class QuizStartChair : Interactable
 
             
             //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-            //fatherSitting.GetComponent<SpriteRenderer>().enabled = false;
+            fatherSitting.GetComponent<SpriteRenderer>().enabled = false;
             //curtains.SetBool("closed", true);
             lightOrigin.GetComponent<LightControl>().turnOnFlag = false;
             lightOrigin.GetComponent<LightControl>().focuseFlag = false;
