@@ -12284,7 +12284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195652, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195655, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
@@ -12292,7 +12292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.7315001
+      value: 0.73718745
+      objectReference: {fileID: 0}
+    - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.3362203
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12300,15 +12304,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.1717797
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 24.532715
+      value: 13.532715
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -27.544098
+      value: 10.455902
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_LocalScale.x
@@ -12324,11 +12328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 235951725600195657, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13.771973
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 235951726122823093, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -12337,6 +12341,14 @@ PrefabInstance:
     - target: {fileID: 1255690450268988319, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642753706187851537, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642753706230700337, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3642753706249649646, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_Name
@@ -12430,6 +12442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3642753706283874403, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3642753706431250478, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -12480,7 +12496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3642753706577900638, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3642753706718390924, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: cam1
@@ -12838,6 +12854,10 @@ PrefabInstance:
     - target: {fileID: 3642753706900439189, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642753706904072228, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3642753706957081725, guid: 227adb3615d8a55469a3f083fee97b94, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -37335,11 +37355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5492253883054299556, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.165985
+      value: 2.1659546
       objectReference: {fileID: 0}
     - target: {fileID: 5492253883054299556, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -267
+      value: -1068
       objectReference: {fileID: 0}
     - target: {fileID: 5492253883054299556, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -37383,7 +37403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6793118725884276952, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.600006
+      value: -6.5999756
       objectReference: {fileID: 0}
     - target: {fileID: 6793118725884276952, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -37419,7 +37439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7637951725386188482, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.3069153
+      value: 1.3068848
       objectReference: {fileID: 0}
     - target: {fileID: 7637951725386188482, guid: 7ae0aac656a1ea849b5bf6b81bd54bd2, type: 3}
       propertyPath: m_AnchoredPosition.y
