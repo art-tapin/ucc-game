@@ -36,9 +36,9 @@ public class Order : MonoBehaviour
 
         }
         Debug.Log(burgers);
-        burgersText.text = " x "+burgers;
-        chipsText.text =" x "+chips;
-        milkshakeText.text = "x "+milkshakes;
+        burgersText.text = "X " + burgers;
+        chipsText.text ="X " + chips;
+        milkshakeText.text = "X " + milkshakes;
     }
 
     
