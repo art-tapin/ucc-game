@@ -7,6 +7,7 @@ public class SwitchScene : MonoBehaviour
 {
     public GameObject animationStart;
     public GameObject animationEnd;
+    public int sceneIndex = 1;
     
     void Start()
     {
@@ -18,7 +19,7 @@ public class SwitchScene : MonoBehaviour
         if (other.tag == "Player")
         {
             animationEnd.SetActive(true);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sceneIndex);
         }
     }
 }
