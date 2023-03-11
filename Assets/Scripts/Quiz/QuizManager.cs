@@ -123,7 +123,7 @@ public class QuizManager : MonoBehaviour
         
         if (toContinue)
         {
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(2000);
             //change the correct answer to different index
             if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1 &&
                 questions[currentQuestionIndex].keepCorrectAnswer == false)
