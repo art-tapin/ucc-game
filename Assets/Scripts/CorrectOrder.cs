@@ -12,6 +12,8 @@ public class CorrectOrder : MonoBehaviour
     private Sprite originalSprite;
     private bool isDisplayingFeedback = false;
     private float feedbackEndTime = 0f;
+    public AudioSource correct;
+    public AudioSource wrong;
 
     // Start is called before the first frame update
     void Start()
@@ -47,15 +49,17 @@ public class CorrectOrder : MonoBehaviour
             {
                 Debug.Log("Answer is correct!");
                 spriteRenderer.sprite = correctSprite;
+                correct.Play();
             }
             else
             {
                 Debug.Log("Answer is wrong!");
                 spriteRenderer.sprite = wrongSprite;
+                wrong.Play();
             }
 
             // Display feedback sprite for feedbackDuration seconds
-            spriteRenderer.enabled = true;
+            //spriteRenderer.enabled = true;
             isDisplayingFeedback = true;
             feedbackEndTime = Time.time + feedbackDuration;
         }

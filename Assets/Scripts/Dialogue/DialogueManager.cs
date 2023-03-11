@@ -11,13 +11,15 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
     private Queue<string> sentences;
     public static bool isActive = false;
-    
+    public GameObject goomba;
+
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        goomba.GetComponent<GoombaWaypoint>().enabled = false;
     }
-    
+
     public void StartDialogue(Dialogue dialogue)
     {
         //GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
@@ -25,21 +27,20 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         Debug.Log("here");
         nameText.text = dialogue.name;
-        
+
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
         {
-              sentences.Enqueue(sentence);
-
+            sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
     }
-        
+
     public void DisplayNextSentence()
     {
         Debug.Log(sentences.Count);
-        if (sentences.Count ==   0)
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
@@ -49,11 +50,11 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(typeSentence(sentence));
         //dialogueText.text = sentence;
     }
-    
+
     IEnumerator typeSentence(string sentence)
     {
         dialogueText.text = "";
-            foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             System.Threading.Thread.Sleep(10);
@@ -67,6 +68,6 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("ended convo");
         isActive = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
-        
-    }    
-} 
+        goomba.GetComponent<GoombaWaypoint>().enabled = true;
+    }
+}

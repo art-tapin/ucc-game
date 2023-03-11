@@ -21,6 +21,7 @@ public class InterviewQuizManager : MonoBehaviour
     public Animator bowserAnim;
     public GameObject player;
     public GameObject bowser;
+    public GameObject enemies;
 
     public int pressedButtonIndex = -1;
     [SerializeField] private Button pressedButton;
@@ -143,6 +144,7 @@ public class InterviewQuizManager : MonoBehaviour
     private void Start()
     {
         generateQuestion();
+        enemies.SetActive(false);
     }
 
     void SetAnswers()
@@ -172,6 +174,7 @@ public class InterviewQuizManager : MonoBehaviour
             interviewCanvas.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
             Destroy(interviewCanvas);
+            enemies.SetActive(true);
         }
     }
 }

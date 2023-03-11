@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed = 7f;
-    [SerializeField] private float jumpTakeOffSpeed = 7f;
+    [SerializeField]
+    private float maxSpeed = 7f;
+
+    [SerializeField]
+    private float jumpTakeOffSpeed = 7f;
     private bool isGrounded = false;
 
     private Rigidbody2D rb;
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
         {
             state = States.idle;
         }
-        
+
         if (Input.GetButton("Horizontal"))
         {
             Run();
@@ -54,10 +57,14 @@ public class Player : MonoBehaviour
         {
             state = States.run;
         }
-        
+
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
 
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, maxSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            transform.position + dir,
+            maxSpeed * Time.deltaTime
+        );
 
         sprite.flipX = dir.x < 0.0f;
     }
@@ -71,7 +78,7 @@ public class Player : MonoBehaviour
     {
         Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 1.8f);
         isGrounded = collider.Length > 1;
-        
+
         if (!isGrounded)
         {
             state = States.jump;
