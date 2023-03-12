@@ -46,10 +46,6 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Button pressedButton;
 
 
-    IEnumerator delay(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);        
-    }
 
     IEnumerator playSound(float seconds/*, AudioClip sound*/)
     {
@@ -99,7 +95,6 @@ public class QuizManager : MonoBehaviour
     
     public void incorrect()
     {
-        //delay(2);
         GameObject correctAnswerButton = changeCorrectAnswerColor();
         StartCoroutine(revertColor(3, correctAnswerButton));
     }
@@ -116,18 +111,14 @@ public class QuizManager : MonoBehaviour
     {
         isSelected = false;     //enables to click buttons again
         changeColour(-1);
-        // Play sound here
-        // highlight the answer button (yes or no)
-        // 
-        
+        // Play sound here       
         
         if (toContinue)
         {
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(1000);
             //change the correct answer to different index
             if (questions[currentQuestionIndex].CorrectAnswer == pressedButtonIndex+1 &&
                 questions[currentQuestionIndex].keepCorrectAnswer == false)
-
             {
                 switch (pressedButtonIndex)
                 {
@@ -147,7 +138,6 @@ public class QuizManager : MonoBehaviour
                 options[pressedButtonIndex].GetComponent<AnswersData>().isCorrect = false;
             }
             incorrect();
-            
         }
         else
         {
