@@ -9,6 +9,7 @@ public class PlayerPassOut : MonoBehaviour
     public GameObject dead;
     public GameObject target;
     public AudioSource deathSound;
+    public AudioSource normalMusic;
     public AudioSource cityMusic;
     private PlayerMovement playerMovement;
 
@@ -18,11 +19,11 @@ public class PlayerPassOut : MonoBehaviour
         {
             player.GetComponent<SpriteRenderer>().enabled = false;
             dead.SetActive(true);
-            StartCoroutine(DelayedCoroutine());
             deathSound.Play();
             cityMusic.Play();
+            normalMusic.Stop();
+            StartCoroutine(DelayedCoroutine());           
             player.GetComponent<PlayerMovement>().setSpeed(6);
-            //player.SetActive(true);
         }
     }
 

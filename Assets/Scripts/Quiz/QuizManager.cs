@@ -18,7 +18,7 @@ public class QuizManager : MonoBehaviour
     public GameObject confirmingDialogue;
     public GameObject incorrectButton;
     public GameObject questionCanvas;
-    public AudioSource audioSource;
+
     public SpriteRenderer sittingPlayer;
     public SpriteRenderer sittingFather;
     public Animator curtains;
@@ -30,6 +30,8 @@ public class QuizManager : MonoBehaviour
     public Animator fatherScene;
 
     private bool finished = false;
+    public GameObject thirdTrigger,
+        fourthTrigger;
 
     //public SpriteRenderer sittingPlayer;
     //public Camera cam1;
@@ -40,8 +42,12 @@ public class QuizManager : MonoBehaviour
 
     //public AudioSource wwtbamMainTheme;
     //public AudioSource questionSound;
-    //public AudioSource incorrectSound;
-    //public AudioSource endSound;
+    public AudioSource wwbatmTheme;
+    public AudioSource incorrectSound;
+    public AudioSource endSound;
+    public AudioSource seriousQuestion;
+    public AudioSource easyQuestion;
+    public AudioSource answerSound;
 
     public int pressedButtonIndex = -1;
 
@@ -88,6 +94,7 @@ public class QuizManager : MonoBehaviour
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = true;
         disableButtons();
+        //answerSound.Play();
         return correctAnswerButton;
     }
 
@@ -96,6 +103,7 @@ public class QuizManager : MonoBehaviour
         //remove the question from the list
         questions.RemoveAt(currentQuestionIndex);
         generateQuestion();
+        //answerSound.Play();
         // play sound
     }
 
@@ -113,9 +121,11 @@ public class QuizManager : MonoBehaviour
 
     public void continueNotContinue(bool toContinue)
     {
+        //answerSound.Play();
         isSelected = false; //enables to click buttons again
         changeColour(-1);
         // Play sound here
+
 
         if (toContinue)
         {
@@ -188,6 +198,7 @@ public class QuizManager : MonoBehaviour
             pressedButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red;
             pressedButton.GetComponent<Image>().color = Color.red;
             disableButtons();
+            answerSound.Play();
         }
     }
 
@@ -225,6 +236,17 @@ public class QuizManager : MonoBehaviour
         if (questions.Count > 0)
         {
             //currentQuestionIndex = Random.Range(0, questions.Count);
+            if (questions.Count == 5)
+            {
+                easyQuestion.Play();
+                wwbatmTheme.Stop();
+            }
+
+            if (questions.Count == 3)
+            {
+                seriousQuestion.Play();
+                easyQuestion.Stop();
+            }
             if (questions.Count == 1)
             {
                 finished = true;
@@ -233,9 +255,6 @@ public class QuizManager : MonoBehaviour
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
         }
-        //if (questions.Count == 0) {
-        //  finished = true;
-        //}
         else
         {
             questionCanvas.SetActive(false);
@@ -247,19 +266,13 @@ public class QuizManager : MonoBehaviour
             {
                 curtains.GetComponent<Animator>().SetBool("closed", true);
                 sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-                //sittingFather.GetComponent<SpriteRenderer>().enabled = false;
                 lightOrigin.GetComponent<LightControl>().turnOnFlag = false;
                 lightOrigin.GetComponent<LightControl>().focuseFlag = false;
-                //cam1.enabled = true;
-                //cam2.enabled = false;
-                //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-                //audioSource.Stop();
+                sittingFather.GetComponent<SpriteRenderer>().enabled = false;
+                thirdTrigger.SetActive(true);
+                fourthTrigger.SetActive(true);
             }
-            //curtains.GetComponent<Animator>().SetBool("closed", true);
-            //cam1.enabled = true;
-            //cam2.enabled = false;
-            //sittingPlayer.GetComponent<SpriteRenderer>().enabled = false;
-            audioSource.Stop();
+            wwbatmTheme.Stop();
         }
     }
 }

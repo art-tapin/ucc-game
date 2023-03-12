@@ -34,8 +34,9 @@ public class OrderSpawner : MonoBehaviour
         new1();
         playerInventory.SetActive(true);
         inventory = FindObjectOfType<Inventory>();
-        normalMusic.Play();
+        fastMusic.Play();
         slowMusic.Stop();
+        normalMusic.Stop();
     }
 
     public void end()
@@ -43,7 +44,7 @@ public class OrderSpawner : MonoBehaviour
         Debug.Log("end");
         playerInventory.SetActive(false);
         endDialogue.SetActive(true);
-        fastMusic.Stop();
+        normalMusic.Stop();
         slowMusic.Play();
     }
 
@@ -78,15 +79,15 @@ public class OrderSpawner : MonoBehaviour
         if (inventory.check(temp.burgers, temp.chips, temp.milkshakes))
         {
             Destroy(order1);
-            playerMovement.setSpeed(playerMovement.getSpeed() * .75f);
+            playerMovement.setSpeed(playerMovement.getSpeed() * .85f);
 
-            if (count == 3)
+            if (count == 2)
             {
-                normalMusic.Stop();
-                fastMusic.Play();
+                fastMusic.Stop();
+                normalMusic.Play();
             }
 
-            if (count == 5)
+            if (count == 4)
             {
                 slowMusic.Play();
                 fastMusic.Stop();

@@ -18,8 +18,14 @@ public class SwitchScene : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            StartCoroutine(DelayedCoroutine()); 
             animationEnd.SetActive(true);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sceneIndex);
         }
+    }
+
+        IEnumerator DelayedCoroutine()
+    {
+        yield return new WaitForSeconds(2f);        
     }
 }

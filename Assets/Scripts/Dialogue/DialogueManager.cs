@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public static bool isActive = false;
     public GameObject goomba;
+    private int convoCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class DialogueManager : MonoBehaviour
         //GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
         isActive = true;
         animator.SetBool("IsOpen", true);
-        Debug.Log("here");
+        //Debug.Log("here");
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -65,9 +66,15 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        Debug.Log("ended convo");
+        //Debug.Log("ended convo");
         isActive = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
-        goomba.GetComponent<GoombaWaypoint>().enabled = true;
+        if (convoCount == 1)
+        {
+            goomba.GetComponent<GoombaWaypoint>().enabled = true;
+            //convoCount++;
+        }
+        convoCount++;
+        //close convo sound
     }
 }

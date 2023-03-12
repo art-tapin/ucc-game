@@ -21,6 +21,7 @@ public class QuizStartChair : Interactable
     public AudioSource audioSource;
     public GameObject father;
     public GameObject fatherSitting;
+    //public GameObject quizCanvas;
 
     //public Light[] lights;
     public GameObject lightOrigin;
