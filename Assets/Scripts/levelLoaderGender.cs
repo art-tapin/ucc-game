@@ -10,14 +10,13 @@ public class levelLoaderGender : MonoBehaviour
     public float transitionTime = 2f;
     private int buildIndexConstant = 1;
 
-    public void SetGender (int qualityIndex)
+    public void SetGender(int qualityIndex)
     {
         if (qualityIndex != 0)
         {
             buildIndexConstant = 2;
         }
     }
-    
 
     public void LoadNextLevel()
     {

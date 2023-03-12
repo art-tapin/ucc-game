@@ -13,11 +13,10 @@ public class OpeningTextTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 
+        //
         //if (GameObject.Find( == false) {
         //    Debug.Log("end timelapse");
-        //} 
-       
+        //}
     }
 
     void StartText()

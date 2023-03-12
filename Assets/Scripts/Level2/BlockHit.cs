@@ -8,7 +8,7 @@ public class BlockHit : MonoBehaviour
     public int maxHits = -1;
 
     private bool animating;
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!animating && collision.gameObject.CompareTag("Player"))
@@ -29,7 +29,7 @@ public class BlockHit : MonoBehaviour
 
         if (maxHits == 0)
         {
-            spriteRenderer.sprite =emptyBlock;
+            spriteRenderer.sprite = emptyBlock;
         }
 
         if (item != null)

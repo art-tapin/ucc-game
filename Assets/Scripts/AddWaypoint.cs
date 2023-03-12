@@ -16,8 +16,8 @@ public class AddWaypoint : MonoBehaviour
         }
     }
 
-    private void Start() {
+    private void Start()
+    {
         waypoint.SetActive(false);
     }
-    
 }

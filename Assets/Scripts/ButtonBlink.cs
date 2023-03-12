@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonBlink : MonoBehaviour
 {
-    
     Button btn;
     public float blinkFadeInTime = 0.001f;
     public float blinkFadeOutTime = 0.001f;
@@ -28,17 +27,30 @@ public class ButtonBlink : MonoBehaviour
         //timeChecker += Time.deltaTime;
         if (timeChecker < blinkFadeInTime)
         {
-            cb.normalColor = new Color(oldColor.r, oldColor.g, oldColor.b, timeChecker / blinkFadeInTime);
+            cb.normalColor = new Color(
+                oldColor.r,
+                oldColor.g,
+                oldColor.b,
+                timeChecker / blinkFadeInTime
+            );
             btn.colors = cb;
-        }else if (timeChecker < blinkFadeInTime + blinkDuration)
+        }
+        else if (timeChecker < blinkFadeInTime + blinkDuration)
         {
             cb.normalColor = new Color(oldColor.r, oldColor.g, oldColor.b, 1);
             btn.colors = cb;
-        }else if (timeChecker < blinkFadeInTime + blinkDuration + blinkFadeOutTime)
+        }
+        else if (timeChecker < blinkFadeInTime + blinkDuration + blinkFadeOutTime)
         {
-            cb.normalColor = new Color(oldColor.r, oldColor.g, oldColor.b, 1 - (timeChecker - blinkFadeInTime - blinkDuration) / blinkFadeOutTime);
+            cb.normalColor = new Color(
+                oldColor.r,
+                oldColor.g,
+                oldColor.b,
+                1 - (timeChecker - blinkFadeInTime - blinkDuration) / blinkFadeOutTime
+            );
             btn.colors = cb;
-        }else
+        }
+        else
         {
             timeChecker = 0;
         }

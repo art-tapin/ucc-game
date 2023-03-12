@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class WaypointFollowerDungeon : MonoBehaviour
 {
-    [SerializeField] private GameObject[] waypoints;
+    [SerializeField]
+    private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
 
-    [SerializeField] private float speed = 1f;
+    [SerializeField]
+    private float speed = 1f;
 
     public GameObject platform;
 
@@ -16,11 +18,12 @@ public class WaypointFollowerDungeon : MonoBehaviour
         platform.GetComponent<WaypointFollowerDungeon>().enabled = true;
     }
 
-    
     private void Update()
     {
-        
-        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < 0.1f)
+        if (
+            Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position)
+            < 0.1f
+        )
         {
             currentWaypointIndex++;
             if (currentWaypointIndex >= waypoints.Length)
@@ -32,7 +35,10 @@ public class WaypointFollowerDungeon : MonoBehaviour
             platform.GetComponent<WaypointFollowerDungeon>().enabled = false;
             Debug.Log("2");
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
-
+        transform.position = Vector2.MoveTowards(
+            transform.position,
+            waypoints[currentWaypointIndex].transform.position,
+            speed * Time.deltaTime
+        );
     }
 }

@@ -8,13 +8,13 @@ public class TitleSwitchScene : MonoBehaviour
     public GameObject animationStart;
     public GameObject animationEnd;
     public int sceneIndex = 1;
-    
+
     void Start()
     {
         animationStart.SetActive(true);
         StartCoroutine(StartAnimation());
     }
-    
+
     IEnumerator StartAnimation()
     {
         yield return new WaitForSeconds(5);

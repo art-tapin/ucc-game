@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneMenu : MonoBehaviour
 {
-
     public void Scene1()
     {
         SceneManager.LoadScene(2);

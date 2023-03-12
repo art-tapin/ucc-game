@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class CharacterMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject startingAnimation;
-    [SerializeField] private GameObject endingAnimation;
+    [SerializeField]
+    private GameObject startingAnimation;
+
+    [SerializeField]
+    private GameObject endingAnimation;
     private int buildIndexConstant = 1;
     public float transitionTime = 2f;
 
-    
     void Start()
     {
         startingAnimation.SetActive(true);
         //endingAnimation.SetActive(false);
     }
 
-    public void SetGender (int qualityIndex)
+    public void SetGender(int qualityIndex)
     {
         Debug.Log(qualityIndex);
         if (qualityIndex != 0)
@@ -31,7 +33,6 @@ public class CharacterMenu : MonoBehaviour
         endingAnimation.SetActive(true);
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + buildIndexConstant));
     }
-
 
     IEnumerator LoadLevel(int levelIndex)
     {

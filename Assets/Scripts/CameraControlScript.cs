@@ -13,7 +13,7 @@ public class CameraControlScript : MonoBehaviour
         camera.m_DefaultBlend.m_Time = 0.0f;
         animator.SetBool("zoomOutScene", true);
     }
-    
+
     public void ZoomSceneFalse()
     {
         camera.m_DefaultBlend.m_Time = 3.0f;

@@ -5,6 +5,4 @@ using UnityEngine;
 public class FinalPush : MonoBehaviour
 {
     public GameObject goomba;
-
-    
 }

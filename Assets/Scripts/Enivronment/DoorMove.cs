@@ -19,9 +19,8 @@ public class DoorMove : Interactable
             door.GetComponent<SpriteRenderer>().enabled = false;
             //WaitForSeconds(.5f);
             SceneControl.TransitionPlayer(target.transform.position);
-            
-            door.GetComponent<SpriteRenderer>().enabled = true;
 
+            door.GetComponent<SpriteRenderer>().enabled = true;
         }
         isClosed = !isClosed;
     }

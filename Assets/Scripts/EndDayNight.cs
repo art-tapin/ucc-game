@@ -5,19 +5,15 @@ using UnityEngine.Rendering.Universal;
 
 public class EndDayNight : MonoBehaviour
 {
-public Light2D light;
-public DayNightCycleURP daylight;
+    public Light2D light;
+    public DayNightCycleURP daylight;
 
-void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.tag == "Player")
+    void OnTriggerEnter2D(Collider2D other)
     {
-        daylight.enabled = false;
-        light.intensity = 0.3f;
+        if (other.tag == "Player")
+        {
+            daylight.enabled = false;
+            light.intensity = 0.3f;
+        }
     }
-
-
-
-}
-
 }

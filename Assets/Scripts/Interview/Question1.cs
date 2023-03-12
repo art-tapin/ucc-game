@@ -8,5 +8,4 @@ public class Question1
     public bool keepCorrectAnswer;
     public string[] Answers;
     public int CorrectAnswer;
-
 }

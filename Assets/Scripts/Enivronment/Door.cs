@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-
 public class Door : Interactable
 {
     public SpriteRenderer door;
     private bool isClosed;
+
     //public GameObject target;
 
     public override void Interact()
@@ -20,7 +20,6 @@ public class Door : Interactable
         {
             door.GetComponent<SpriteRenderer>().enabled = false;
             //SceneControl.TransitionPlayer(target.transform.position);
-
         }
         isClosed = !isClosed;
     }
@@ -30,4 +29,3 @@ public class Door : Interactable
         isClosed = false;
     }
 }
-

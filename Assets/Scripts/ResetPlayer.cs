@@ -7,7 +7,8 @@ public class ResetPlayer : MonoBehaviour
     public GameObject player;
     public GameObject bowser;
     public GameObject text;
-    public GameObject endScene1, endscene2;
+    public GameObject endScene1,
+        endscene2;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

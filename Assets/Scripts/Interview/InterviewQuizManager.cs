@@ -10,13 +10,14 @@ public class InterviewQuizManager : MonoBehaviour
     public GameObject[] options;
     public int currentQuestionIndex;
     public static bool isIncorrect = false;
-    public bool isSelected = false;    
+    public bool isSelected = false;
 
     public TextMeshProUGUI QuestionText;
     public TextMeshProUGUI incorrectText;
     private TextMeshProUGUI selected;
     public GameObject incorrectButton;
     public GameObject interviewCanvas;
+    public GameObject interviewTrigger;
 
     public Animator bowserAnim;
     public GameObject player;
@@ -24,21 +25,22 @@ public class InterviewQuizManager : MonoBehaviour
     public GameObject enemies;
 
     public int pressedButtonIndex = -1;
-    [SerializeField] private Button pressedButton;
 
-    
+    [SerializeField]
+    private Button pressedButton;
+
     //disable blinking of button and revert the colour to white
     IEnumerator revertCorrectAnswerColor(float seconds, GameObject CAB)
     {
         isSelected = false;
         yield return new WaitForSeconds(seconds);
         CAB.GetComponent<Image>().color = Color.white;
-        CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
+        CAB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white;
         TextMeshProUGUI text = CAB.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = false;
-        enableButtons();    
-         //remove the question from the list
+        enableButtons();
+        //remove the question from the list
         questions.RemoveAt(currentQuestionIndex);
         generateQuestion();
     }
@@ -46,28 +48,30 @@ public class InterviewQuizManager : MonoBehaviour
     void revertPressedButtonColor()
     {
         isSelected = false;
-        
+
         options[pressedButtonIndex].GetComponent<Image>().color = Color.white;
-        options[pressedButtonIndex].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.white; 
-        TextMeshProUGUI text = options[pressedButtonIndex].GetComponentInChildren<TextMeshProUGUI>();
+        options[pressedButtonIndex].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color =
+            Color.white;
+        TextMeshProUGUI text = options[
+            pressedButtonIndex
+        ].GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
-        enableButtons();        
+        enableButtons();
     }
 
-    
     GameObject changeCorrectAnswerColor()
     {
         int q = questions[currentQuestionIndex].CorrectAnswer;
-        GameObject correctAnswerButton = options[q-1];
+        GameObject correctAnswerButton = options[q - 1];
         correctAnswerButton.GetComponent<Image>().color = Color.green;
-        correctAnswerButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.green; 
+        correctAnswerButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color =
+            Color.green;
         TextMeshProUGUI text = correctAnswerButton.GetComponentInChildren<TextMeshProUGUI>();
         TextBlink textBlink = text.GetComponent<TextBlink>();
         textBlink.enabled = true;
         disableButtons();
         return correctAnswerButton;
     }
-
 
     public void correct()
     {
@@ -76,12 +80,11 @@ public class InterviewQuizManager : MonoBehaviour
         pressedButtonIndex = -1;
     }
 
-    
     public void incorrect()
     {
         // set incorrect text
         int insultsIndex;
-        string[] insults = {"Try again!", "You're not very good at this"};
+        string[] insults = { "Try again!", "You're not very good at this" };
         insultsIndex = Random.Range(0, insults.Length);
         string incorrectText = insults[insultsIndex];
         isIncorrect = true;
@@ -90,7 +93,6 @@ public class InterviewQuizManager : MonoBehaviour
         changeColour(pressedButtonIndex);
         revertPressedButtonColor();
     }
-
 
     public void setIncorrectText(string text)
     {
@@ -116,7 +118,7 @@ public class InterviewQuizManager : MonoBehaviour
             options[i].GetComponent<Button>().interactable = true;
         }
     }
-    
+
     void disableButtons()
     {
         for (int i = 0; i < options.Length; i++)
@@ -124,21 +126,20 @@ public class InterviewQuizManager : MonoBehaviour
             options[i].GetComponent<Button>().interactable = false;
         }
     }
-     
+
     void Update()
     {
         if (isSelected && pressedButtonIndex >= 0)
         {
-            pressedButton = options[pressedButtonIndex].GetComponent<Button>();      
+            pressedButton = options[pressedButtonIndex].GetComponent<Button>();
             pressedButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red;
-            pressedButton.GetComponent<Image>().color = Color.red; 
-        }   
+            pressedButton.GetComponent<Image>().color = Color.red;
+        }
         if (isIncorrect && Input.GetMouseButtonDown(0))
         {
             incorrectButton.SetActive(false);
             pressedButtonIndex = -1;
-            
-        }   
+        }
     }
 
     private void Start()
@@ -153,14 +154,16 @@ public class InterviewQuizManager : MonoBehaviour
         {
             options[i].GetComponent<AnswersData1>().isCorrect = false;
             options[i].GetComponent<AnswersData1>().index = i;
-            options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = questions[currentQuestionIndex].Answers[i];
-            if (questions[currentQuestionIndex].CorrectAnswer == i+1)
+            options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = questions[
+                currentQuestionIndex
+            ].Answers[i];
+            if (questions[currentQuestionIndex].CorrectAnswer == i + 1)
             {
                 options[i].GetComponent<AnswersData1>().isCorrect = true;
             }
         }
     }
-    
+
     void generateQuestion()
     {
         if (questions.Count > 0)
@@ -169,11 +172,11 @@ public class InterviewQuizManager : MonoBehaviour
             QuestionText.text = questions[currentQuestionIndex].Question;
             SetAnswers();
         }
-        else 
+        else
         {
             interviewCanvas.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
-            Destroy(interviewCanvas);
+            Destroy(interviewTrigger);
             enemies.SetActive(true);
         }
     }

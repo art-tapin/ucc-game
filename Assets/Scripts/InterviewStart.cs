@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class InterviewStart : MonoBehaviour
 {
-
-
     public GameObject player;
     public GameObject interview;
     public GameObject bowser;
-    public Animator bowserAnim;
 
-    public AudioSource interviewAudio;
+    //public Animator bowserAnim;
+
+    //public AudioSource interviewAudio;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void Start() { }
 
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)

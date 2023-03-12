@@ -22,7 +22,7 @@ public class WindowParallaxController : MonoBehaviour
         cam = Camera.main.transform;
         //camStartPos = cam.position;
         camStartPos = Vector3.zero;
-        
+
         int backCount = transform.childCount;
         mat = new Material[backCount];
         backSpeed = new float[backCount];
@@ -46,11 +46,11 @@ public class WindowParallaxController : MonoBehaviour
                 farthestBack = backgrounds[i].transform.position.z - cam.position.z;
             }
         }
-            
+
         for (int i = 0; i < backCount; i++)
         {
             backSpeed[i] = 1 - (backgrounds[i].transform.position.z) / farthestBack;
-        }     
+        }
     }
 
     private void LateUpdate()

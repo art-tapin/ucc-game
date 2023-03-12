@@ -59,7 +59,7 @@ public class CorrectOrder : MonoBehaviour
             }
 
             // Display feedback sprite for feedbackDuration seconds
-            //spriteRenderer.enabled = true;
+            spriteRenderer.enabled = true;
             isDisplayingFeedback = true;
             feedbackEndTime = Time.time + feedbackDuration;
         }

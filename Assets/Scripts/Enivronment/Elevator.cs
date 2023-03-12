@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-
 public class Elevator : Interactable
 {
     public Sprite up;
     public Sprite down;
 
     public SpriteRenderer sprite;
-    private bool isUp;    
+    private bool isUp;
 
     public GameObject platform;
 
@@ -18,11 +17,10 @@ public class Elevator : Interactable
     {
         if (isUp)
         {
-            sprite.sprite = up;            
+            sprite.sprite = up;
             Debug.Log("Up");
             platform.GetComponent<WaypointFollowerDungeon>().enabled = true;
             //gameObject.GetComponent<WaypointFollower>().enabled = true;
-
         }
         else
         {
@@ -43,4 +41,3 @@ public class Elevator : Interactable
         platform.GetComponent<WaypointFollowerDungeon>().enabled = false;
     }
 }
-

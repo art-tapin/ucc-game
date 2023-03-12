@@ -9,7 +9,7 @@ public class AnswersData1 : MonoBehaviour
     public bool isCorrect = false;
     public int index;
     public InterviewQuizManager quizManager;
-    
+
     public void Answer()
     {
         quizManager.changeColour(index);
@@ -26,5 +26,4 @@ public class AnswersData1 : MonoBehaviour
             Debug.Log("Incorrect");
         }
     }
-     
 }

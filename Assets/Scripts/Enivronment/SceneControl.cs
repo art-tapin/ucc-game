@@ -33,10 +33,12 @@ public class SceneControl : MonoBehaviour
         instance.StartCoroutine(instance.Transition(pos));
     }
 
-    private IEnumerator Transition(Vector3 pos) {
+    private IEnumerator Transition(Vector3 pos)
+    {
         fader.gameObject.SetActive(true);
 
-        for(float i = 0; i < 1; i += Time.deltaTime / 0.25f) {
+        for (float i = 0; i < 1; i += Time.deltaTime / 0.25f)
+        {
             fader.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, i));
             yield return null;
         }

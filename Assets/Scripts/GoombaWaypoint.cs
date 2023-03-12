@@ -6,8 +6,9 @@ public class GoombaWaypoint : MonoBehaviour
 {
     public float speed = 0.5f;
 
-    [SerializeField] private GameObject[] waypoints;
-    private int currentWaypointIndex = 0;  
+    [SerializeField]
+    private GameObject[] waypoints;
+    private int currentWaypointIndex = 0;
 
     public Transform Player;
     private SpriteRenderer sprite;
@@ -21,7 +22,7 @@ public class GoombaWaypoint : MonoBehaviour
         goomba.GetComponent<GoombaWaypoint>().enabled = true;
         anim.SetBool("isWalking", true);
     }
-    
+
     void LateUpdate()
     {
         oldPosition = transform.position.x;
@@ -41,7 +42,10 @@ public class GoombaWaypoint : MonoBehaviour
         }
         */
 
-        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < 0.1f)
+        if (
+            Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position)
+            < 0.1f
+        )
         {
             currentWaypointIndex++;
             if (currentWaypointIndex >= waypoints.Length)
@@ -53,10 +57,12 @@ public class GoombaWaypoint : MonoBehaviour
             Debug.Log("******************");
 
             //goomba.GetComponent<GoombaWaypoint>().enabled = false;
-            
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(
+            transform.position,
+            waypoints[currentWaypointIndex].transform.position,
+            speed * Time.deltaTime
+        );
         //goomba.GetComponent<GoombaWaypoint>().enabled = false;
     }
-
 }

@@ -2,30 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class Inventory : MonoBehaviour
-{ 
+{
     public TMP_Text burgersText;
     public TMP_Text chipsText;
     public TMP_Text milkshakeText;
     private int burgers = 0;
     private int chips = 0;
-    private int milkshakes =0;
+    private int milkshakes = 0;
 
     public void increaseBurger(int amount)
     {
-        burgers +=amount;
+        burgers += amount;
         update();
     }
+
     public void increaseChips(int amount)
     {
-        chips +=amount;
+        chips += amount;
         update();
     }
+
     public void increaseMilkshake(int amount)
     {
         milkshakes += amount;
         update();
     }
+
     public void empty()
     {
         milkshakes = 0;
@@ -33,22 +37,25 @@ public class Inventory : MonoBehaviour
         chips = 0;
         update();
     }
+
     public bool check(int burgerAmount, int chipsAmount, int milkshakeAmount)
     {
-        if (burgerAmount==burgers && chipsAmount==chips && milkshakeAmount==milkshakes)
+        if (burgerAmount == burgers && chipsAmount == chips && milkshakeAmount == milkshakes)
         {
             return true;
         }
         return false;
     }
-    public void update(){
+
+    public void update()
+    {
         burgersText.text = "X " + burgers;
-        chipsText.text ="X " + chips;
-        milkshakeText.text ="X " + milkshakes;
+        chipsText.text = "X " + chips;
+        milkshakeText.text = "X " + milkshakes;
     }
+
     void Start()
     {
         update();
     }
-
 }

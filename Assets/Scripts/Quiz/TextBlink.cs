@@ -6,7 +6,6 @@ using TMPro;
 
 public class TextBlink : MonoBehaviour
 {
-    
     TextMeshProUGUI text;
     public float blinkFadeInTime = 0.001f;
     public float blinkFadeOutTime = 0.001f;
@@ -27,14 +26,27 @@ public class TextBlink : MonoBehaviour
         //timeChecker += Time.deltaTime;
         if (timeChecker < blinkFadeInTime)
         {
-            text.color = new Color(oldColor.r, oldColor.g, oldColor.b, timeChecker / blinkFadeInTime);
-        }else if (timeChecker < blinkFadeInTime + blinkDuration)
+            text.color = new Color(
+                oldColor.r,
+                oldColor.g,
+                oldColor.b,
+                timeChecker / blinkFadeInTime
+            );
+        }
+        else if (timeChecker < blinkFadeInTime + blinkDuration)
         {
             text.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1);
-        }else if (timeChecker < blinkFadeInTime + blinkDuration + blinkFadeOutTime)
+        }
+        else if (timeChecker < blinkFadeInTime + blinkDuration + blinkFadeOutTime)
         {
-            text.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1 - (timeChecker - blinkFadeInTime - blinkDuration) / blinkFadeOutTime);
-        }else
+            text.color = new Color(
+                oldColor.r,
+                oldColor.g,
+                oldColor.b,
+                1 - (timeChecker - blinkFadeInTime - blinkDuration) / blinkFadeOutTime
+            );
+        }
+        else
         {
             timeChecker = 0;
         }

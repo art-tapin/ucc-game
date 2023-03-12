@@ -6,9 +6,10 @@ public class DialogueInstance : MonoBehaviour
 {
     public Dialogue trigger;
 
-    private void TextPlay() {
+    private void TextPlay()
+    {
         DialogueManager.isActive = true;
         FindObjectOfType<DialogueManager>().StartDialogue(trigger);
-        Destroy(gameObject, .5f); 
+        Destroy(gameObject, .5f);
     }
 }

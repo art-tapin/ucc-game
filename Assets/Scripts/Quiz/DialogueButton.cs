@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class DialogueButton : MonoBehaviour
 {
-   public QuizManager quizManager;
-   public Button yesButton;
-   public Button noButton;
-   //public static bool toContinue;
+    public QuizManager quizManager;
+    public Button yesButton;
+    public Button noButton;
+
+    //public static bool toContinue;
 
 
-   public void NotContinue()
+    public void NotContinue()
     {
         quizManager.continueNotContinue(false);
     }

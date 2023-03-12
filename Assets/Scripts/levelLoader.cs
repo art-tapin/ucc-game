@@ -14,7 +14,7 @@ public class levelLoader : MonoBehaviour
     {
         btn.onClick.AddListener(LoadNextLevel);
     }
-    
+
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));

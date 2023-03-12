@@ -8,12 +8,12 @@ public class SwitchScene : MonoBehaviour
     public GameObject animationStart;
     public GameObject animationEnd;
     public int sceneIndex = 1;
-    
+
     void Start()
     {
         animationStart.SetActive(true);
     }
-    
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")

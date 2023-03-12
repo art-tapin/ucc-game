@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BlockCoin : MonoBehaviour
 {
-    // gets called automatically 
+    // gets called automatically
     private void Start()
     {
         //GameManager.Instance.AddCoin();
@@ -39,5 +39,4 @@ public class BlockCoin : MonoBehaviour
 
         transform.localPosition = to;
     }
-
 }

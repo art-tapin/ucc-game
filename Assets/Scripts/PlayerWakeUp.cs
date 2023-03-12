@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWakeUp : MonoBehaviour
 {
     public GameObject player;
+
     //public GameObject dead;
 
     private void OnTriggerEnter2D(Collider2D collision)

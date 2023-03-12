@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class ChasePlayer : MonoBehaviour
 {
-
     public Transform Player;
     int MoveSpeed = 4;
     int MaxDist = 10;
     int MinDist = 5;
 
-      void FixedUpdate()
+    void FixedUpdate()
     {
         transform.LookAt(Player);
 
@@ -22,7 +22,6 @@ public class ChasePlayer : MonoBehaviour
             {
                 Debug.Log("Do something");
             }
-
-        }        
-    }    
+        }
+    }
 }

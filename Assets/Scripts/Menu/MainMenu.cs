@@ -5,20 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject startingAnimation;
-    [SerializeField] private GameObject endingAnimation;
-    
+    [SerializeField]
+    private GameObject startingAnimation;
+
+    [SerializeField]
+    private GameObject endingAnimation;
+
     void Start()
     {
         startingAnimation.SetActive(true);
         //endingAnimation.SetActive(false);
     }
-    
+
     public void PlayGame()
     {
         endingAnimation.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
     }
 
     public void QuitGame()
@@ -26,5 +28,4 @@ public class MainMenu : MonoBehaviour
         Debug.Log("QUIT");
         Application.Quit();
     }
-
 }

@@ -42,7 +42,7 @@ public class OrderSpawner : MonoBehaviour
     {
         Debug.Log("end");
         playerInventory.SetActive(false);
-        endDialogue.SetActive(true);  
+        endDialogue.SetActive(true);
         fastMusic.Stop();
         slowMusic.Play();
     }
@@ -78,23 +78,24 @@ public class OrderSpawner : MonoBehaviour
         if (inventory.check(temp.burgers, temp.chips, temp.milkshakes))
         {
             Destroy(order1);
-            playerMovement.setSpeed(playerMovement.getSpeed() * .75f);  
+            playerMovement.setSpeed(playerMovement.getSpeed() * .75f);
 
-            if (count == 3) {
+            if (count == 3)
+            {
                 normalMusic.Stop();
-                fastMusic.Play();                
-            }          
+                fastMusic.Play();
+            }
 
-            if (count == 1)
+            if (count == 5)
             {
                 slowMusic.Play();
                 fastMusic.Stop();
-                normalMusic.Stop();           
-                finalGoomba.SetActive(true);                
+                normalMusic.Stop();
+                finalGoomba.SetActive(true);
                 endBox.SetActive(false);
                 counter.GetComponent<BoxCollider2D>().enabled = false;
                 player.GetComponent<PlayerMovement>().enabled = false;
-                end();                
+                end();
             }
             else
             {
@@ -105,7 +106,7 @@ public class OrderSpawner : MonoBehaviour
             return true;
         }
         else
-        {            
+        {
             return false;
         }
     }

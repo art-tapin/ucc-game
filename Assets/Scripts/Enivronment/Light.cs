@@ -20,21 +20,20 @@ public class Light : Interactable
             //if(lamp2 != null) {
             //lamp2.GetComponent<UnityEngine.Light>().enabled = false;
 
-            for(int i = 0; i < lights.Length; i++)
+            for (int i = 0; i < lights.Length; i++)
             {
                 lights[i].enabled = false;
             }
         }
-        
         else
         {
             Debug.Log("ON");
             //lamp1.GetComponent<UnityEngine.Light>().enabled = true;
             //if(lamp2 != null) {
             //lamp2.GetComponent<UnityEngine.Light>().enabled = true;
-            
 
-            for(int i = 0; i < lights.Length; i++)
+
+            for (int i = 0; i < lights.Length; i++)
             {
                 lights[i].enabled = true;
             }
@@ -43,11 +42,11 @@ public class Light : Interactable
     }
 
     private void Start()
-    {        
+    {
         isOff = false;
-        for(int i = 0; i < lights.Length; i++)
-            {
-                lights[i].enabled = false;
-            }    
+        for (int i = 0; i < lights.Length; i++)
+        {
+            lights[i].enabled = false;
+        }
     }
 }
