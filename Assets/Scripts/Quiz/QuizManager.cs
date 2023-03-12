@@ -236,7 +236,7 @@ public class QuizManager : MonoBehaviour
         if (questions.Count > 0)
         {
             //currentQuestionIndex = Random.Range(0, questions.Count);
-            if (questions.Count == 5)
+            if (questions.Count == 6)
             {
                 easyQuestion.Play();
                 wwbatmTheme.Stop();

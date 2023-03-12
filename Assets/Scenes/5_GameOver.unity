@@ -190,7 +190,17 @@ MonoBehaviour:
 
 
 
-    Special Thanks'
+
+
+
+
+
+
+    Special Thanks
+
+
+
+    Free License Music'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
@@ -327,24 +337,34 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Anna Kramar
 
-    Artem Tuiin
+
+    Artem Tiupin
+
 
     Colin Morgan
 
+
     Daniil Klieshchov
+
 
     Ivan
     O''Herlihy
+
 
     Rheena Blas
 
 
 
+
     ChatGPT
+
+
 
     David Fesliyan
 
-    Dvid Renda'
+
+    David
+    Renda'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
@@ -732,7 +752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: The End
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 358795b0fde1d9945a321efc23407789, type: 2}
   m_sharedMaterial: {fileID: 31028921907683917, guid: 358795b0fde1d9945a321efc23407789, type: 2}
@@ -937,9 +957,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: d907e907c704fea48a60fde2734ee6cc, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2a318a9e8541c1c4f86c3ed0c5cf5acf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 57180ae245c57db489009dc3d3fbccd8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.081
   m_Pitch: 1
   Loop: 0
   Mute: 0
