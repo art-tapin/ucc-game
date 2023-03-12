@@ -19,6 +19,7 @@ public class CharacterMenu : MonoBehaviour
 
     public void SetGender (int qualityIndex)
     {
+        Debug.Log(qualityIndex);
         if (qualityIndex != 0)
         {
             buildIndexConstant = 2;
@@ -28,19 +29,14 @@ public class CharacterMenu : MonoBehaviour
     public void PlayGame()
     {
         endingAnimation.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void LoadNextLevel()
-    {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + buildIndexConstant));
     }
+
 
     IEnumerator LoadLevel(int levelIndex)
     {
         //Play animation
         endingAnimation.SetActive(true);
-        Debug.Log("Transitioning to next level");
         //Wait
         yield return new WaitForSeconds(transitionTime);
 
