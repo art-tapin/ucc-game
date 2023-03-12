@@ -306,6 +306,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Level 3: Laptop Hunt'
       objectReference: {fileID: 0}
+    - target: {fileID: 706645368412424848, guid: 958c1f5b70f372645a0402caf0c5e15f, type: 3}
+      propertyPath: m_lineSpacing
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 706645368412424850, guid: 958c1f5b70f372645a0402caf0c5e15f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 706645368412424851, guid: 958c1f5b70f372645a0402caf0c5e15f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 813.845
